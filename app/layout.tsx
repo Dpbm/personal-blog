@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google';
 import { githubURL } from './constants';
 import './global.css';
 
-const roboto = Roboto();
+const roboto = Roboto({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Dpbm Website',
