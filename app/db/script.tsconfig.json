@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "outDir": "../../db_build",
+        "allowSyntheticDefaultImports": true,
+        "module": "node16",
+        "moduleResolution": "node16"
+    },
+    "include": [
+        "createDB.ts",
+        "constants.ts"
+    ]
+}

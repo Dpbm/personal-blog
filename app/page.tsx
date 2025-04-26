@@ -3,17 +3,11 @@ import IconLink from './components/iconLink';
 import { githubURL, linkedinURL } from './constants';
 import { PostCardData } from './types';
 import PostCard from './components/post';
-
-const posts: PostCardData[] = [
-	{
-		title: 'test',
-		subtitle: 'ajkdsha9dhu9329ud23hu9d23hu9',
-		date: Date.now(),
-		slug: 'asdadjhas',
-	},
-];
+import DB from './db/DB';
 
 export default function Home() {
+	const posts = new DB().getPosts(0);
+
 	return (
 		<main>
 			<section className='flex flex-col p-20 items-center w-screen'>
@@ -31,12 +25,16 @@ export default function Home() {
 				</nav>
 			</section>
 
-			<section className='flex flex-col p-20  w-screen'>
+			<section className='flex flex-col p-20 w-screen'>
 				<h1 className='text-2xl'>Recent Posts</h1>
 				<li className='list-none'>
-					{posts.map((post: PostCardData) => (
-						<PostCard post={post} />
-					))}
+					{posts.length > 0 ? (
+						posts.map((post: PostCardData) => (
+							<PostCard post={post} key={post.id} />
+						))
+					) : (
+						<p className='text-xl mt-10'>No Posts yet!</p>
+					)}
 				</li>
 			</section>
 		</main>
