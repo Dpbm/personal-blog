@@ -23,4 +23,29 @@ export default class DB {
 		const data = query.all(offset) || [];
 		return toPostData(data);
 	}
+
+	addPost(post: PostCardData): void {
+		// it's meant to be used via CLI
+		const query = this.database.prepare(
+			`
+				INSERT INTO 
+				posts(title, subtitle, slug, date)
+				VALUES(?, ?, ?, ?)
+			`
+		);
+
+		const result = query.run(
+			post.title,
+			post.subtitle,
+			post.slug,
+			Math.trunc(Date.now())
+		);
+		const id = result.lastInsertRowid;
+
+		console.log(`Inserted with id: ${id}`);
+	}
+
+	close(): void {
+		this.database.close();
+	}
 }

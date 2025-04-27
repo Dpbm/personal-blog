@@ -5,12 +5,12 @@
         "skipLibCheck": true,
         "esModuleInterop": true,
         "strict": true,
-        "outDir": "../../db_build",
+        "outDir": "../../add_post_build",
         "allowSyntheticDefaultImports": true,
         "module": "node16",
         "moduleResolution": "node16"
     },
     "include": [
-        "createDB.ts"
+        "addPost.ts"
     ]
 }

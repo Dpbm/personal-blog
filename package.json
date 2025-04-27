@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:create": "tsc --project ./app/db/script.tsconfig.json && node ./db_build/db/createDB.js"
+    "db:create": "tsc --project ./app/db/script.tsconfig.json && node ./db_build/db/createDB.js",
+    "post:add": "tsc --project ./app/posts/script.tsconfig.json && node ./add_post_build/posts/addPost.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
