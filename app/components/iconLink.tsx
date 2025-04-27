@@ -11,7 +11,11 @@ export default function IconLink({
 }) {
 	return (
 		<Link href={url} style={{ color: 'black' }}>
-			<FontAwesomeIcon icon={icon} height={40} />
+			<FontAwesomeIcon
+				icon={icon}
+				height={40}
+				className='hover:opacity-40'
+			/>
 		</Link>
 	);
 }

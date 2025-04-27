@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { PostCardData } from '../types';
-import { buildPostURL } from '../utils';
+import { buildPostURL, getDateString } from '../utils';
 
 export default function PostCard({ post }: { post: PostCardData }) {
 	const datetime = new Date(post.date);
+	const dateString = getDateString(datetime);
 
-	const dateString = `${datetime.getMonth()}/${datetime.getDate()}/${datetime.getFullYear()}`;
 	const postURL = buildPostURL(post.slug);
 
 	return (

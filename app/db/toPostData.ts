@@ -1,6 +1,6 @@
 import { PostCardData } from '../types';
 
-export default function toPostData(data: any): PostCardData[] {
+export default function mapToPostData(data: any): PostCardData[] {
 	return data.map(
 		(d: any) =>
 			({

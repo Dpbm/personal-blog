@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3';
 import { dbFile } from '../constants';
 import { PostCardData } from '../types';
-import toPostData from './toPostData';
+import mapToPostData from './toPostData';
 
 export default class DB {
 	private database;
@@ -14,14 +14,39 @@ export default class DB {
 	getPosts(offset: number): PostCardData[] {
 		const query = this.database.prepare(
 			`
-	SELECT *
-	FROM posts
-	LIMIT ?, 20
-`
+				SELECT *
+				FROM posts
+				LIMIT ?, 20;
+			`
 		);
 
 		const data = query.all(offset) || [];
-		return toPostData(data);
+		return mapToPostData(data);
+	}
+
+	getAllPosts(): PostCardData[] {
+		const query = this.database.prepare(
+			`
+				SELECT *
+				FROM posts;
+			`
+		);
+
+		const data = query.all() || [];
+		return mapToPostData(data);
+	}
+
+	getPost(slug: string): PostCardData {
+		const query = this.database.prepare(
+			`
+				SELECT * 
+				FROM posts 
+				WHERE slug=?;
+			`
+		);
+
+		const data = query.get(slug) || {};
+		return data as PostCardData;
 	}
 
 	addPost(post: PostCardData): void {
@@ -30,7 +55,7 @@ export default class DB {
 			`
 				INSERT INTO 
 				posts(title, subtitle, slug, date)
-				VALUES(?, ?, ?, ?)
+				VALUES(?, ?, ?, ?);
 			`
 		);
 

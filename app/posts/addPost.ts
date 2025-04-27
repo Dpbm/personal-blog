@@ -1,5 +1,5 @@
 import readline from 'node:readline';
-import { exit, stdin, stdout } from 'node:process';
+import { stdin, stdout } from 'node:process';
 import path from 'node:path';
 import DB from '../db/DB';
 import { PostCardData } from '../types';

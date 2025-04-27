@@ -6,7 +6,8 @@ import PostCard from './components/post';
 import DB from './db/DB';
 
 export default function Home() {
-	const posts = new DB().getPosts(0);
+	const db = new DB();
+	const posts = db.getPosts(0);
 
 	return (
 		<main>
