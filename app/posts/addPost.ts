@@ -16,7 +16,12 @@ const rl = readline.createInterface({ input: stdin, output: stdout });
 var postData: PostCardData = {};
 
 function generateSlug(title: string) {
-	const dashedTitle = title.replace(' ', '-');
+	const dashedTitle = title
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.replace(/[^a-zA-Z0-9\s]/g, '')
+		.replace(/\s+/g, '-');
 	const randomString = (Math.random() + 1).toString(20).substring(2);
 	return dashedTitle + '-' + randomString;
 }

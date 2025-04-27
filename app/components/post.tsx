@@ -3,7 +3,9 @@ import { PostCardData } from '../types';
 import { buildPostURL } from '../utils';
 
 export default function PostCard({ post }: { post: PostCardData }) {
-	const datetime = new Date(post.date).toUTCString();
+	const datetime = new Date(post.date);
+
+	const dateString = `${datetime.getMonth()}/${datetime.getDate()}/${datetime.getFullYear()}`;
 	const postURL = buildPostURL(post.slug);
 
 	return (
@@ -12,10 +14,10 @@ export default function PostCard({ post }: { post: PostCardData }) {
 				<h1 className='text-3xl text-wrap'>{post.title}</h1>
 				<h2 className='text-md text-wrap'>{post.subtitle}</h2>
 				<time
-					dateTime={datetime}
+					dateTime={datetime.toUTCString()}
 					className='text-xs text-zinc-500 text-wrap'
 				>
-					{datetime}
+					{dateString}
 				</time>
 			</ul>
 		</Link>
