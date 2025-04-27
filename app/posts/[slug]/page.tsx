@@ -22,7 +22,7 @@ export default async function Page({ params }: PostPageParams) {
 	);
 
 	return (
-		<main className='p-20'>
+		<main className='p-10'>
 			<IconLink icon={faArrowLeft} url={'/'} />
 			<h1 className='text-5xl mb-2 mt-10 font-bold'>{title}</h1>
 			<h2 className='text-2xl'>{subtitle}</h2>

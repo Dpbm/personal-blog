@@ -11,7 +11,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<section className='flex flex-col p-20 items-center w-screen'>
+			<section className='flex flex-col pt-20 pb-10 pl-10 pr-10 items-center w-screen'>
 				<h1 className='text-5xl text-center mb-8'>
 					Hello I'm Alexandre (Aka DPBM)👋
 				</h1>
@@ -26,7 +26,7 @@ export default function Home() {
 				</nav>
 			</section>
 
-			<section className='flex flex-col p-20 w-screen'>
+			<section className='flex flex-col p-10 w-screen'>
 				<h1 className='text-2xl'>Recent Posts</h1>
 				<li className='list-none'>
 					{posts.length > 0 ? (
