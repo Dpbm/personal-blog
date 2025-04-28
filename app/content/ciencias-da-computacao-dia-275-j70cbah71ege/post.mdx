@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+#### IPs
+
+-   número de hosts segue a formula 2\^n-2, sendo *n* o numero de bits
+    (o menos dois remove os dois números reservados .0 e .255)
+-   IP do roteador geralmente é o primeiro, mas pode ser qualquer outro
+    na prática
+
+#### Roteadores
+
+-   também são chamados de gateway
+-   ao acessar um IP fora da rede ele vai para o roteador e vai pulando
+    de roteador em roteador até chegar no ponto que tenha o que você
+    procura
+-   LAN é sempre por difusão, mesmo usando switch (o switch ainda usa
+    difusão, mas ele também consegue enviar diretamente dependendo do
+    seu tempo de uso)
+
+#### Sub-redes
+
+-   você pode pegar um IP especifico e dividi-lo em sub-redes, basta
+    configurar a máscara de sub-rede
+-   ao dividir um IP em sub-redes, cada sub-rede terá seu IP de
+    broadcast e de rede. Por exemplo, se tivermos 192.168.0.0 até
+    192.168.0.31, os IPs usáveis vão d e 192.168.0.1 até 192.168.0.30
+-   na máscara você começa a adicionar bits da esquerda para direita no
+    ultimo octeto disponível (você não conta em binário, vai apenas
+    mudando o bit menos significativo para 1) ex: 255.255.255.0 →
+    255.255.255.128
+-   não há mudanças na classe de IP
+-   nḿero de sub redes é 2\^n sendo n o numero de bits adicionados
+-   não pode haver máscara 255.255.255.255, já que essa rede teria
+    apenas número de broadcast
+-   quantidade de IPs de cada sub rede também segue o padrão 2\^n-2,
+    sendo n o número de bits do host
+-   ao adicionar bits na sub rede, a máscara também aumenta ex:
+    192.168.0.0/24 → 192.168.0.0/26 (adicionando mais 2 bits)
+-   computadores com mascaras diferentes não pertencem a mesma rede(não
+    conseguem se comunicar entre si)
+-   Para saber se dois IPs estão na mesma rede faça: transforme os IPs e
+    mascaras de cada um em binário, depois faça uma operação AND entre o
+    IP e sua respectiva máscara. Se ao final eles forem iguais, eles
+    pertencem a mesma rede
+
+

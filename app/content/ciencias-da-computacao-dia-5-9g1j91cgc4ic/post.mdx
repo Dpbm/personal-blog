@@ -1,0 +1,54 @@
+
+
+
+
+
+
+usando algoritmos e pensamos levemente sobre como escrever um código
+bom.
+
+
+
+
+
+
+
+
+### Melhorando o código
+
+Toda vez que você invoca alguma variável isso consome 1 pulso de clock,
+sendo assim, sempre que possível tente reduzir seu código exemplo:
+
+perimetro = 2 \* comprimento + 2 \* largura
+
+esse exemplo a cima consome 5 pulsos de clock sendo 2 para invocar cada
+variável e 3 para cada operação aritmética
+
+perimetro = 2 \*(comprimento + largura)
+
+já neste você consumirá 4 pulsos de clock, 2 para cada variável e 2 para
+cada operação aritmética
+
+Outro fator importante é usar constantes já que elas não consomem
+processamento nem memória
+
+então ao invés de fazer isso:
+
+a = 10 / 100
+
+Já que consumirá um pulso de clock, faça:
+
+a = 0.1
+
+Já que não consumirá nada
+
+
+
+
+
+
+
+
+\\n → caractere usado para pular um linha
+
+

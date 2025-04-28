@@ -1,0 +1,68 @@
+
+
+
+
+
+
+
+-   procedures não precisam retornar algo (diferente das funções)
+-   trigger reage a uma ação sem a necessidade de chama-lo diretamente
+-   cada SGBD tem sua linguagem para criar esses objetos (PL/SQL é o da
+    ORACLE)
+
+#### PL/SQL
+
+-   bloco que utiliza SQL para executar coisas
+-   3 partes → declaração (opcional), execução, tratamento de erros
+    (opcional)
+-   adiciona mais coisas ao SQL (como loops, if, etc.)
+-   oracle por padrão, se você nãos tratar os erros, ele exibe o erro e
+    para a execução
+-   dentro da declaração você pode declarar → constantes, variáveis,
+    cursores(objetos que definem um DQL dentro)
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+DECLARE
+  -- declara os elementos
+
+-- variavel
+-- nome tipo [NOT NULL] := valor
+exemplo_1 NUMBER(4) NOT NULL := 4;
+exemplo_2 CHAR(1);
+
+-- ROWTYPE pega o tipo de uma linha de uma tabela (deixa mais rapido, usando cursors)
+-- TYPE pega o mesmo tipo de uma coluna de uma tabela
+exemplo_3 Tabela.coluna%Type;
+
+BEGIN
+-- execucao
+
+--exemplo
+SELECT idade, sexo
+INTO exemplo_1, exemplo_2
+FROM Tabela
+WHERE id=1;
+-- aqui a Tabela precisa retornar exatemente 1 elemento 
+
+-- uso do if
+IF ... THEN
+...
+ELSE IF ... THEN
+...
+ELSE
+...
+END IF;
+
+EXCEPTION
+
+-- excecoes
+
+END;
+
+
+-- coloca algo no console
+-- || concatena elementos
+dbms_output.put_line('test' || a || ' test');
+```
+
+

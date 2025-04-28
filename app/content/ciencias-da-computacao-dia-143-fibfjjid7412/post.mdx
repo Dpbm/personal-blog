@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+**linguagens formais** → maneira de descrever regras gramaticais de uma
+linguagem.
+
+**grafos** → diferente das árvores, os grafos representam regras para
+algo.
+
+**linguagem** → qualquer meio sistemático capaz de comunicar qualquer
+coisa a partir de qualquer meio.
+
+**formal** → meio definido por regras.
+
+**autômato** →maquina que funciona de forma automática. Nesse contexto,
+os grafos são autômatos, uma vez que, não importa se alguém sabe ou não
+as regras de uma linguagem, apenas seguindo o grafo é capaz de dizer seu
+uma palavra é válida ou não de forma *automática*. Em um contexto mais
+geral, um robô pode ser considerado um autômato, uma vez que ele seguirá
+apenas o que foi anteriormente programado, também de forma *automática*.
+
+**alfabeto** → conjunto de símbolos que pertencem à uma linguagem.
+Exemplo:{0,1}.
+
+**cadeia** → sequência de símbolos. Exemplo: 0101010000101010.
+
+#### autômatos finitos
+
+-   modelo computacional com quantidade limitada de estados;
+-   pode ser representado por tabelas também;
+-   pode ser implementado com poucos recursos;
+-   caso o último símbolo seja um estado final a palavra é válida;
+-   reconhece uma linguagem;
+
+**autômatos finitos determinísticos** → autômato finito que há apenas um
+caminho entre 2 estados para cada símbolo possível.
+
+#### Partes de um autômato finito
+
+-   M = (Q, **∑**, δ, q0, F)
+-   Q → Conjunto de estados
+-   ∑ → alfabeto
+-   δ → função de transição
+-   q0 → estado inicial (não pode haver mais de um)
+-   F → conjunto de estados finais
+
+#### Símbolos
+
+![estado inicial](image_233.png)
+
+![estado intermediário](image_234.png)
+
+![estado final](image_235.png)
+
+![transição](image_236.png)
+
+#### transições
+
+![image](image_237.png)
+
+![image](image_238.png)
+
+![image](image_239.png)
+
+![image](image_240.png)
+
+![image](image_241.png)
+
+> observe que, os valores ficam nas transições, não nos estados.
+
+

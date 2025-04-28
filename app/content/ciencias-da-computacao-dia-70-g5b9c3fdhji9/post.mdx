@@ -1,0 +1,86 @@
+
+
+
+
+
+
+determinantes de matrizes n\>3
+
+Na ultima vez que falamos sobre determinantes, vimos o teorema de Sarrus
+e de La Place. No entanto, os exemplos que mostrei eram apenas com
+matrizes quadradas de ordem 3, e você pode estar pensando, o que faço
+com matrizes maiores?
+
+Bem, o teorema de La Place não se limita a matrizes de ordem 3, ele pode
+ser utilizado em qualquer tamanho de matriz, sendo necessário apenas
+acrescentar mais termos na equação geral.
+
+Podemos usar essa ideia a nosso favor, podemos usar o teorema de La
+Place para encontrar matrizes menores e no momento em que a matriz atual
+possui ordem ≤ 3 podemos fazer o próprio teorema de La Place ou até
+mesmo Sarrus (o que você achar mais fácil).
+
+ex:
+
+#### \| 0 3 1 4 \|
+
+#### \| 3 1 6 2 \|
+
+#### \| 9 3 2 1 \|
+
+#### \| 1 5 3 2 \|
+
+#### det(A) = a11 \* A11 + a12 \* A12 + a13 \* A13 + a14 \* A14
+
+ex2:
+
+#### \| 2 0 3 1 4 \|
+
+#### \| 5 3 1 6 2 \|
+
+#### \| 0 9 3 2 1 \|
+
+#### \| 1 1 5 3 2 \|
+
+#### \| 9 0 3 1 4 \|
+
+#### det(A) = a11 \* A11 + a12 \* A12 + a13 \* A13 + a14 \* A14 + a15 \* A15
+
+*B = A11*
+
+#### \| 3 1 6 2 \|
+
+#### \| 9 3 2 1 \|
+
+#### \| 1 5 3 2 \|
+
+#### \| 0 3 1 4 \|
+
+#### det (B) = b11 \* B11 + b12 \* B12 + b13 \* B13 + b14 \* B14
+
+B11
+
+\| 3 2 1 \|
+
+\| 5 3 2 \|
+
+\| 3 1 4 \|
+
+pronto, encontramos uma matriz de ordem 3, agora basta utilizar seu meio
+preferido para calcular isso, aqui utilizarei Sarrus
+
+3\*3\*4 + 2\*2\*3 + 1\*1\*5--3\*3\*1--1\*2\*3--4\*5\*2 = -2
+
+fazendo para todos os outros temos:
+
+3 \* (-2) + 83 + 6 \* 117 + 2 \* (-6) = -6 + 83 + 702--12 = 767
+
+Agora temos que
+
+#### det(A) = 2 \* 767 + a12 \* A12 + a13 \* A13 + a14 \* A14 + a15 \* A15
+
+#### det(A) = 1534 + a12 \* A12 + a13 \* A13 + a14 \* A14 + a15 \* A15
+
+Agora é só repetir o mesmo processo até encontrar todos os valores
+
+

@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+-   DDD → o foco principal é o dominio (dominio é a representação de
+    algo da vida real)
+-   clean archicteture → beaseado no DDD
+
+![from:
+[aboutcoding](https://medium.com/@aboutcoding/clean-architecture-the-essence-of-the-dependency-rule-969f1e8417f6)](image_392.png)
+
+![image](image_393.png)
+
+-   Domain/Core → regras de negócios (modelos também entram aqui)
+-   App → parte que se comunica com o Core (APIS, LIB, Interfaces, etc.)
+-   Presentation → fala com o USER (web/MVC)
+-   Infra → liga a aplicação com o mundo externo
+-   A comunicação acontece de fora para dentro
+-   IOc (inversão de controle) → uma parte exterior pede uma coisa
+    especifica para uma área que sabe fazer aquilo muito bem
+
+#### Dependencias entre camadas
+
+![image](image_394.png)
+
+
+
+
+
+
+
+
+#### DOTNET
+
+-   .sln → modelo de solução
+-   solução → arquitetura mais complexa
+
+

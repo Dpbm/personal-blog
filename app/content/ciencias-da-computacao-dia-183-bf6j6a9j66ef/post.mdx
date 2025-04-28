@@ -1,0 +1,77 @@
+
+
+
+
+
+
+
+#### Qualidade de software
+
+-   modelos de qualidade (semelhante ao ISO) → CMMI, MPS.BR
+-   trabalho com qualidade = produto de qualidade
+-   implica: um software confiável, sem defeitos, acessível, seguro,
+    portável, interoperável(sistema capaz de se comunicar com outros)
+-   pode ser algo subjetivo ao cliente, sendo necessário estipular as
+    expectativas e tentar quebra-las
+-   gerenciamento total da qualidade → atender as expectativas do
+    cliente; desenvolver processos para melhoria constante
+-   para garantir a qualidade → usar métodos, técnicas, ferramentas,
+    versionamento, padrões, métricas, registros, etc.
+-   controle de qualidade → evitar que produtos defeituosos sejam
+    entregues
+-   garantia de qualidade → fazer o software com o minimo de defeitos
+-   avaliação → classificação dos processos/produtos
+-   auditoria → verificar se o produto segue os padrões/normas através
+    de evidências de testes, observações, medições, etc.
+
+
+
+
+
+
+
+
+#### Teste de software
+
+-   objetivo é encontrar erros, e não fazer os testes passarem
+-   Falha → software não consegue executar sua função (aparente ao
+    usuário)
+-   Falta → causa de uma falha
+-   Erro → instabilidade que vem de uma falta e pode se tornar uma falha
+-   Dados de teste → amostra do que seria uma entrada real
+-   Casos de teste → cenários de execução usando os dados de teste e sua
+    saída esperada
+-   Eficácia dos testes → quanto mais erros você consegue descobrir com
+    o menor esforço
+-   Teste funcional(caixa preta, black box) → coloca o software para
+    funcionar e vê como ele age com as entradas (analisa partes pequenas
+    do software, como funções, requisitos)
+-   Teste Estrutural(caixa branca, white box) → Baseado no código,
+    analisá o funcionamento interno (complexidade ciclomática, big O,
+    etc)
+
+#### Técnicas Para testes black box
+
+-   partição por equivalência → quando os possíveis dados de entrada
+    estão em blocos de válidos e inválidos, então pega-se alguns dados
+    validos e inválidos para avaliar
+-   análise de valor limite → quando seus dados também estão divididos
+    em blocos de válidos e inválidos, mas dessa vez você pega aqueles
+    que estão no limite entre um bloco e outro
+-   Tabela de decisão → tabela criada a partir das regras de negócio,
+    visando testar todos os casos possíveis (diferentes combinações de
+    entradas)
+
+#### Técnicas para testes White box
+
+-   complexidade ciclomática → vê a quantida de desvios do fluxo
+    principal do programa (quantidade de ifs,for, while, etc). Nesses
+    casos é necessário criar testes para cada caminho possível. Para
+    isso podemos usar uma espécie de autômato, e o numero de caminhos é
+    = numero de transições (E) --- número de estados (N) + 2
+
+> **V = E --- N + 2**
+
+![[treinaweb](https://www.treinaweb.com.br/blog/complexidade-ciclomatica-analise-estatica-e-refatoracao)](image_291.png)
+
+

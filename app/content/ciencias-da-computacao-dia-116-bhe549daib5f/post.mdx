@@ -1,0 +1,76 @@
+
+
+
+
+
+
+
+### Listas restritas
+
+-   listas que possuem restrições quanto a suas operações (inserção,
+    remoção e acesso aos dados).
+
+
+
+
+
+
+
+
+### Pilha
+
+-   é uma lista restrita;
+-   LIFO(last in first out);
+-   operações: push(insere no topo) e pop(remove do topo);
+-   poder ser criado usando linked lists.
+
+
+
+
+
+
+
+
+### Pilha de execução
+
+-   Um programa empilha as funções que devem ser executadas primeiro,
+    para saber sua ordem lógica.
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="c"}
+main(){
+  f1();
+}
+
+f1(){
+  f2();
+}
+```
+
+``` {code-block-mode="1" spellcheck="false" code-block-lang="typescript"}
+Pilha de execução
+
+1. f2()
+2. f1()
+3. main()
+```
+
+
+
+
+
+
+
+
+### Notas de C
+
+> para deletar um elemento de um array:
+
+> array\[last\] = array\[last-1\]
+
+> isso faz com que array\[last\] seja sobrescrito por array\[last-1\]
+
+> ao fazer p-\>info\[++p-\>topo\]
+
+> ++p-\>topo incrementa p-\>topo e também retorna o valor incrementado
+
+
