@@ -18,7 +18,7 @@ export default function Home() {
 
 		try {
 			setLoading(true);
-			const res = await fetch(`/api/posts/?offset=${p}`);
+			const res = await fetch(`/api/posts?offset=${p}`);
 			const data: PostCardData[] = await res.json();
 			setPosts([...posts, ...data]);
 			setPointer(p + 1);
@@ -32,7 +32,7 @@ export default function Home() {
 		}
 
 		try {
-			const res = await fetch(`/api/total/posts`);
+			const res = await fetch(`/api/total/posts/`);
 			const data: { total: number } = await res.json();
 			setTotalPosts(data.total);
 		} catch (error) {}
