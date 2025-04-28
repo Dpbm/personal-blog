@@ -1,13 +1,76 @@
+'use client';
+
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import IconLink from './components/iconLink';
 import { githubURL, linkedinURL } from './constants';
 import { PostCardData } from './types';
 import PostCard from './components/post';
-import DB from './db/DB';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-	const db = new DB();
-	const posts = db.getPosts(0);
+	const [totalPosts, setTotalPosts] = useState(Infinity);
+	const [posts, setPosts] = useState<PostCardData[]>([]);
+	const [loading, setLoading] = useState(false);
+	const [pointer, setPointer] = useState(0);
+
+	async function getData(p: number) {
+		if (p < pointer) return;
+
+		try {
+			setLoading(true);
+			const res = await fetch(`/api/posts/?offset=${p}`);
+			const data: PostCardData[] = await res.json();
+			setPosts([...posts, ...data]);
+			setPointer(p + 1);
+			setLoading(false);
+		} catch (error) {}
+	}
+
+	async function countPosts() {
+		if (totalPosts != Infinity) {
+			return;
+		}
+
+		try {
+			const res = await fetch(`/api/total/posts`);
+			const data: { total: number } = await res.json();
+			setTotalPosts(data.total);
+		} catch (error) {}
+	}
+
+	useEffect(() => {
+		(async () => {
+			await countPosts();
+			await getData(pointer);
+		})();
+	}, []);
+
+	useEffect(() => {
+		const handleScroll = async () => {
+			if (loading || posts.length >= totalPosts) {
+				return;
+			}
+
+			const windowHeight = window.innerHeight;
+			const documentHeight = document.documentElement.scrollHeight;
+			const scrollTop = window.scrollY;
+
+			const offsetInPX = 300;
+
+			const isAtBottom =
+				scrollTop + windowHeight >= documentHeight - offsetInPX;
+
+			if (isAtBottom) {
+				await getData(pointer);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [pointer]);
 
 	return (
 		<main>
@@ -34,8 +97,11 @@ export default function Home() {
 							<PostCard post={post} key={post.id} />
 						))
 					) : (
-						<p className='text-xl mt-10'>No Posts yet!</p>
+						<p className='text-xl mt-10'>
+							{!loading ? 'No Posts yet!' : 'Loading Posts...'}
+						</p>
 					)}
+					<span></span>
 				</li>
 			</section>
 		</main>

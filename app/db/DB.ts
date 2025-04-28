@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3';
-import { dbFile } from '../constants';
+import { dbFile, postsPerPage } from '../constants';
 import { PostCardData } from '../types';
 import mapToPostData from './toPostData';
 
@@ -17,11 +17,11 @@ export default class DB {
 				SELECT *
 				FROM posts
 				ORDER BY id DESC
-				LIMIT ?, 20;
+				LIMIT ?, ?;
 			`
 		);
 
-		const data = query.all(offset) || [];
+		const data = query.all(offset, postsPerPage) || [];
 		return mapToPostData(data);
 	}
 
@@ -69,6 +69,18 @@ export default class DB {
 		const id = result.lastInsertRowid;
 
 		console.log(`Inserted with id: ${id}`);
+	}
+
+	countPosts(): number {
+		const query = this.database.prepare(
+			`
+				SELECT COUNT(*)
+				FROM posts;
+			`
+		);
+
+		const result = query.get() as number;
+		return result;
 	}
 
 	close(): void {
