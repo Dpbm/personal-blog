@@ -1,0 +1,203 @@
+
+
+
+
+
+### Ciências da computação dia 111
+
+MySQL JOIN --- Banco de dados
+
+### JOIN
+
+-   usado para fazer junção de duas ou mais tabelas;
+-   um join não deve retornar mais linhas do que a menor tabela
+    (geralmente com o equi join) nem da maior tabela;
+-   obs: é necessário haver chave estrangeiras entre as tabelas.
+
+
+
+
+
+
+
+
+### CROSS JOIN
+
+-   multiplicação dos dados das tabelas (produto cartesiano);
+-   retorna uma combinação dos dados das duas colunas, possuindo
+    n(linhas da tabela 1) x m (linhas da tabela 2);
+-   não é utilizado.
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table JOIN table2;
+```
+
+
+
+
+
+
+
+
+### INNER JOIN
+
+-   join que une duas tabelas e pega apenas aquilo que tem relação;
+-   dois tipos são implementados em MySQL: EquiJOIN e Natural JOIN.
+
+O comando ON mostra sempre a relação entre a PK e FK.
+
+obs: se quisermos, antes do comando JOIN podemos colocar o INNER.
+
+
+
+
+
+
+
+
+### EquiJOIN
+
+-   Join com base em dados comuns entre as tabelas;
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table JOIN table2 ON (table.campo = table2.campo);
+```
+
+Você também pode utilizar múltiplas relações usando os operadores
+lógicos:
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table JOIN table2 ON (table.campo = table2.campo) AND (table.campo2 = table2.campo2);
+```
+
+
+
+
+
+
+
+
+### Natural JOIN
+
+-   Junção de tabelas a partir de colunas de mesmo nome.
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table NATURAL JOIN table2;
+```
+
+Tenha cuidado ao usar esse comando, certifique-se de que as colunas que
+possuem o mesmo nome são as que fazem de fato a relação entre elas.
+
+
+
+
+
+
+
+
+### Outer JOIN
+
+-   Usado para pegar tanto os dados que pertencem a relação como os que
+    não estão também;
+-   possui três tipos: LEFT OUTER JOIN, RIGHT OUTER JOIN e FULL OUTER
+    JOIN.
+
+assim como no INNER, podemos colocar ou não a palavra OUTER antes dos
+comandos JOIN.
+
+
+
+
+
+
+
+
+### LEFT OUTER JOIN
+
+-   retorna os dados da relação mais os dados que não pertencem a
+    relação que estão na tabela da esquerda
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table(tabela da esquerda) LEFT OUTER JOIN table2 ON (table.campo = table2.campo);
+```
+
+
+
+
+
+
+
+
+### RIGHT OUTER JOIN
+
+-   retorna os dados da relação mais os dados que não pertencem a
+    relação que estão na tabela da direita
+
+``` {code-block-mode="1" spellcheck="false" code-block-lang="sql"}
+SELECT * FROM table LEFT OUTER JOIN table2(tabela da direita) ON (table.campo = table2.campo);
+```
+
+
+
+
+
+
+
+
+### FULL OUTER JOIN
+
+-   retorna os dados da relação mais os dados que não pertencem a
+    relação de ambas as tabelas;
+-   Esse não é implementando em MySQL, mas podemos fazer um truque.
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+/* Como deveria ser */
+SELECT * FROM table FULL OUTER JOIN table2 ON (table.campo = table2.campo);
+
+/* Como podemos fazer */
+
+SELECT * 
+  FROM table 
+  LEFT OUTER JOIN table2 ON (table.campo = table2.campo)
+  UNION
+SELECT * 
+  FROM table 
+  RIGHT OUTER JOIN table2 ON (table.campo = table2.campo);
+```
+
+O comando UNION aqui, age como na teoria de conjuntos, unindo os dados
+de ambos os selects/tabelas.
+
+
+
+
+
+
+
+
+### Aliases
+
+Podemos, para ficar mais simples, reduzir o tamanho dos nomes das
+tabelas ou das colunas usando um alias. Para isso no select coloque na
+frente do nome o comando as e o alias que você quer dar, ou simplesmente
+coloque o nome do alias logo na frente, sem o comando as.
+
+``` {code-block-mode="1" spellcheck="false" code-block-lang="sql"}
+SELECT T.campo FROM table as T;
+SELECT T.campo FROM table T;
+```
+
+
+
+
+
+
+
+
+### OBS
+
+O tipo da FK precisa ser igual ao da PK que ela referencia, mas não
+precisam ter a mesma disponibilidade para NULL, ou seja um pode ser NOT
+NULL e o outro NULLABLE.
+
+

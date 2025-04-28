@@ -1,0 +1,38 @@
+
+
+
+
+
+### Ciências da computação dia 162
+
+arquitetura e organização de computadores
+
+#### CACHE
+
+-   maneira temporal de preencher → realizada durante a busca de
+    instruções, uma cópia é enviada para a CACHE. Além disso a UCP usa
+    de alguns truques, como pegar instruções para a CACHE apenas quando
+    não estão lá, para ganhar tempo;
+-   maneira espacial → pega um pedaço da MP e copia para a CACHE. Assim
+    sempre que algo for ser executado, possivelmente, já esta na CACHE;
+-   para a CACHE o mais eficiente são estruturas de repetição, já que é
+    necessário poucas instruções dentro dela para conseguir um ganho de
+    performance.
+
+#### Filas
+
+-   todas as filas possuem limites (superior e inferior);
+-   há duas flags: underflow e overflow;
+-   há um ponteiro para a próxima posição livre para inserir, e um para
+    o endereço para remover o valor;
+-   possui operações de inserção(INS) e remoção(REM).
+
+#### Pilhas
+
+-   possuem limites (superior e inferior);
+-   há flags também, como: underflow e overflow;
+-   possui um ponteiro dizendo a posição para adicionar um valor ou
+    ainda para remover o valor anterior;
+-   possui instruções de inserção (PUSH) e remoção (POP).
+
+

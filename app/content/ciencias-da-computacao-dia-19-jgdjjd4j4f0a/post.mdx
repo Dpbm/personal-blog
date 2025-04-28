@@ -1,0 +1,239 @@
+
+
+
+
+
+### Ciências da computação dia 19
+
+um pouco mais sobre códigos, detecção e correção de erros
+
+### continuando códigos ponderados
+
+código auto-complementável → quando um código ponderado tem o valor 1111
+para o decimal 9 e quando você faz 9 --- n é só você inverter n
+(inverter 0 com 1 e 1 com 0)
+
+ex:
+
+pesos respectivos(3, -1, 1, 6)
+
+1 \| 0 0 1 0
+
+2 \| 1 1 0 0
+
+7 \| 0 0 1 1 (9--2 (2 é o n))
+
+8 \| 11 0 1 (9--1)
+
+> obs: soma dos pesos de um código ponderado precisa ser ≥ 9
+
+
+
+
+
+
+
+
+### Códigos não Ponderados
+
+-   não possuem pesos
+-   obedecem regras especificas a sua aplicação
+
+**código excesso de 3**
+
+você pega o numero atual em binário e soma 3 em binário
+
+1 em excesso de 3
+
+0 0 0 1 + 0 0 1 1 = 0 1 0 0
+
+**código cíclico**
+
+-   Apenas um bit se modifica de uma palavra para outra (essa distância
+    é chamada de distância entre palavras)
+-   A lógica para a criação da tabela de código depende da lógica da
+    aplicação dele
+-   a distancia entre 0 e 9 deve ser 1 tbm, por isso que é ciclico a
+    distancia vai se repetindo
+
+**código de Gray**
+
+-   também é cíclico
+
+*criação com comprimento n*
+
+comprimento 1:
+
+0
+
+1
+
+comprimento 2
+
+0 \| 0
+
+0 \| 1
+
+--- --- (espelho)
+
+1 \| 1
+
+1 \| 0
+
+os valores são espelhados e do lado esquerdo da \| tudo que esta para
+cima do espelho é sempre 0 e tudo que está para baixo é 0
+
+comprimento 3
+
+0 \| 0 0
+
+0 \| 0 1
+
+0 \| 1 1
+
+0 \| 1 0
+
+--- --- --- (espelho)
+
+1 \| 1 0
+
+1 \| 1 1
+
+1 \| 0 1
+
+1 \| 0 0
+
+repare que na parte direita acima do espelho é exatamente o resultado do
+código de tamanho n --- 1 ou seja código de tamanho 2, e isso se repete
+a todo os subsequentes
+
+então um template geral
+
+0 \| código n --- 1
+
+--- --- (espelho)
+
+1 \| código n --- 1 espelhado
+
+binário para código Gray
+
+para transformar binário em código Gray você deixa o bit mais
+significativo como 1 e o resto você vai somando com o antecessor e
+desconsiderando o carry
+
+ex:
+
+1 1 0 0 1 0 1(2)
+
+1 (1 +1 ("desconsidera o carry")) (1 + 0) (0 + 0) (0 + 1) (1 + 0) (0+ 1)
+
+1 0 1 0 1 1 1
+
+código Gray para binário
+
+para o caminho inverso você deixa o mais significativo como 1 e pega o
+resultado anterior menos binário atual (lembrando que 0--1 = 1)
+
+1 0 1 0 0 0 0 1 1 1
+
+1 (1--0) 1 1
+
+1 1 (1--1) = 1 1 0
+
+1 1 0 (0--0) = 1 1 0 0
+
+1 1 0 0 (0--0) = 1 1 0 0 0
+
+1 1 0 0 0 (0--0) = 1 1 0 0 0 0
+
+1 1 0 0 0 0 (0--0) =1 1 0 0 0 0 0
+
+1 1 0 0 0 0 0 (0--1) = 1 1 0 0 0 0 0 1
+
+1 1 0 0 0 0 0 1 (1--1) = 1 1 0 0 0 0 0 1 0
+
+1 1 0 0 0 0 0 1 0 (0--1) = 1 1 0 0 0 0 0 1 0 1(código Gray)
+
+
+
+
+
+
+
+
+### Detecção e correção de erros
+
+-   detecção e correção na transmissão de dados
+-   segurança e confiabilidade nos dados transmitidos
+
+Paridade → total de dígitos 1
+
+Paridade par → total de dígitos 1 é par
+
+Paridade ímpar → total de dígitos 1 é ímpar
+
+Distância entre palavras → número de bits diferentes de uma palavra para
+outra
+
+Distância entre códigos → menor distância entre palavras de um código
+
+BCD paridade par → para deixar um BCD com paridade par, adicionamos uma
+coluna sem valor (0) que não implicará nas contas, apenas na sua
+paridade, e caso o numero de 1 for par adicionamos um 0 nessa coluna se
+não adicionamos 1 (para paridade ímpar é só fazer o inverso)
+
+código ponderado 2 em 5 → código com pesos respectivos (0, 1, 2, 4, 7) →
+código com paridade par com todos os código com 2 números 1 e 5 bits,
+por isso 2 em 5, e como sua primeira coluna é 0 então ela não entra nas
+contas, apenas para paridade
+
+**códigos dectores e corretores de erros**
+
+-   código que possuem uma paridade
+
+**detectar**
+
+caso uma informação seja enviada e não esteja na tabela ou não siga a
+paridade é então detectado um erro
+
+No entanto caso mais de um bit seja modificado, provavelmente vai
+existir um valor desse na tabela de códigos e não será detectado um
+erro, e o valor enviado será considerado outro, esse fato é chamado de
+*erro na interpretação*
+
+No geral os erros que ocorrem são erros únicos (apenas 1 bit de erro)
+por isso no geral são adicionados apenas um bit de paridade
+
+Além disso com a paridade também aumenta-se a distância do código, sendo
+assim para detectar um erro, a distância do código precisa ser pelo
+menos n + 1 (n = numero de erros) = 2
+
+**corrigir**
+
+para corrigir o erro você precisa ter uma distância mínima de n \* 2 +
+1, no exemplo anterior 2 \* 1 + 1 = 3
+
+ou seja
+
+digamos que nossa tabela de codigos é a seguinte
+
+0 0 0
+
+1 1 1
+
+caso a gente envie 0 0 0 mas ocorra um erro no meio e o valor que vai
+chegar seja 0 0 1
+
+então deverá ser necessário olhar na tabela e ver a menor distância de
+palavras entre a errada (001) e as que estão na tabela, a menor
+distância será o valor certo
+
+então
+
+distancia entre 001 e 000 = 1
+
+distancia entre 001 e 111 = 2
+
+então o valor correto é 000 e o valor foi corrigido
+
+

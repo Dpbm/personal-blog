@@ -1,0 +1,60 @@
+
+
+
+
+
+### Ciências da computação dia 138
+
+Árvores AVL --- Algoritmos e estrutura de dados
+
+### Árvores AVL
+
+-   Árvore de busca binária balanceada
+-   balanceada com respeito a altura das sub-arvores
+-   altura maxima entre sub-arvores é de +- 1 (1 ≤ \|hL --- hR\| ≥ -1)
+-   Para inserir nessa árvore, usamos o mesmo algoritmo das árvores de
+    busca binária, depois checamos o balanceamento, caso esteja
+    desbalanceado, rotacionamos o primeiro nó que quebrou o
+    balanceamento.
+-   Para remover é quase a mesma coisa de inserir, só que dessa vez você
+    aplica a rotação contrária.
+
+![exemplo
+arvore avl](https://cdn-images-1.medium.com/max/800/1*tx4BiH27scGnsI2UUbjCKw.png)
+
+
+
+
+
+
+
+
+### Rotações
+
+#### LL (left-left)
+
+![image](https://cdn-images-1.medium.com/max/800/1*bTEgf03pKLZL89unmXfR0A.png)
+
+![image](https://cdn-images-1.medium.com/max/800/1*_EfmTUY4zFswIteLry4uhQ.png)
+
+#### LR (left-right)
+
+![image](https://cdn-images-1.medium.com/max/800/1*5ny7g0Sft_wejPVFO6HWgA.png)
+
+![image](https://cdn-images-1.medium.com/max/800/1*Xk5uof388F72iiLU2XCQbQ.png)
+
+#### RR (right-right)
+
+![image](https://cdn-images-1.medium.com/max/800/1*kE7Gk_MrUv_EXd21Ty1O-w.png)
+
+![image](https://cdn-images-1.medium.com/max/800/1*FuZjazm8ewMZfGHA5xUvlA.png)
+
+#### RL (right-left)
+
+![image](https://cdn-images-1.medium.com/max/800/1*xkhXBTv_--Qs3Jdo1PbRAg.png)
+
+![image](https://cdn-images-1.medium.com/max/800/1*Kc_glfg6PW1oMQgB9rIRFg.png)
+
+#### Nota: LR é o mesmo que LL e depois RR
+
+

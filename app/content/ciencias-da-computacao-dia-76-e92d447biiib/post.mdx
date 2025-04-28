@@ -1,0 +1,104 @@
+
+
+
+
+
+### Ciências da computação dia 76
+
+modelagem de banco de dados, a arte de padronizar dados
+
+No dia 76 de ciências da computação, começamos mais uma matéria,
+modelagem de banco de dados.
+
+Nessa matéria, veremos como estruturar bancos, criar relações entre
+entidades e como tudo isso deve ser padronizado.
+
+
+
+
+
+
+
+
+Nessa primeira aula, entendemos que a modelagem de um banco, se dá, em
+partes, na limitação dos tipos de dados e em seus valores que podem ser
+inseridos no banco.
+
+Digamos que em uma aplicação queremos criar um cadastro de usuários e
+precisamos das informações de cidade e estado.
+
+Nesse exemplo teremos, a principio, duas entidades (tabelas), *estado* e
+*cidade.*
+
+Essas entidades estarão interligadas através de uma chave (ID, a chave
+primária dessas tabelas) chamada *UF*, e uma relação de one-to-many, ou
+seja há muitas cidades dentro de um estado.
+
+A partir disso, poderíamos, por exemplo, listar todas as cidades a
+partir de um estado escolhido pelo usuário, apenas utilizando a chave
+primária *UF.* Dessa forma, poderíamos remover possíveis erros na
+inserção de dados, limitando o escopo do usuário.
+
+
+
+
+
+
+
+
+Esse exemplo dado, é bem simples, mas para fins didáticos é excelente
+para demonstrar o processo de modelagem.
+
+podemos seguir dessa forma a modelagem de um banco:
+
+1.  pense nas entidades(tabelas) necessárias, nesse caso cidades e
+    estados
+2.  pense nos atributos de cada entidade, todas as informações que
+    precisamos de cada entidade
+3.  pense nas relações que essas entidades possuem
+
+
+
+
+
+
+
+
+![representação gráfica do modelo
+de tabela](https://cdn-images-1.medium.com/max/800/1*PSmllloro6eBsnj_KCqTnw.png)
+
+
+
+
+
+
+
+
+### Notas:
+
+RPAS → sistema de aeronave remotamente pilotadas
+
+DDL → data definition language
+
+DML → data manipulation language
+
+DQL → data query language
+
+todos esses DXX estão dentro do SQL
+
+HTTP → porta 80
+
+HTTPS → porta 443
+
+alguns tipos de relações: one-to-one, one-to-many, many-to-many
+
+entidades são as tabelas e atributos as colunas
+
+atributo composto → quando você possui diversas informações diferentes
+em um mesmo atributo, isso deve ser evitado ao máximo (exemplo, endereço
+escrito por extenso)
+
+atributo simple → coluna que apresenta apenas um tipo de informação
+(exemplo, nome, id, cidade, número da rua, etc.)
+
+

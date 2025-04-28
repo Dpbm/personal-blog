@@ -1,0 +1,136 @@
+
+
+
+
+
+### Ciências da computação dia 265
+
+Sistemas operacionais
+
+### Escalonadores para sistemas I/O Bound
+
+#### Round Robin
+
+-   execução de processos de maneira justa e eficiente
+-   tempo compartilhado
+-   preemptivo
+-   dá uma fatia de tempo para cada processo
+-   fila de prontos é cíclica → após o processo terminar de usar sua
+    fatia, ele vai para o final, caso não tenha terminado de executar
+    tudo
+-   tempo de resposta rápido, já que os processos recebem CPU
+    frequentemente
+-   Overhead de comutação (troca de contexto)
+-   desempenho variável → processos longos são prejudicados quando
+    fatias de tempo (quantum) pequenos são usados
+-   utilizar quantum muito grande, faz ele se tornar uma FIFO
+-   quantum muito pequeno faz aumentar o overhead
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="markdown"}
+Para encontrar o melhor quantum (Q) é interessante manter o equilibrio entre o 
+overhead e um tempo razoavel de execução
+
+
+chaveamento = 1ms
+
+Q = 4ms
+total = 4ms + 1ms = 5ms
+
+nesse caso, 20% do tempo é perdido para o overhead com o chaveamento 
+de processos
+
+
+
+Q = 99ms
+total = 99ms + 1ms = 100ms
+
+nesse segundo caso, só 1% do tempo é perdido com a troca de contexto, 
+mas há muito tempo de espera para a troca de procesos
+
+
+Levando em consideração esses exemplos, escolher um quantum Q intermediario, 
+como 20ms seria uma opção viavel
+```
+
+#### Baseado em prioridade
+
+-   varias filas para cada nível de prioridade
+-   processos de prioridade maior irão antes
+-   pode utilizar o round-robin para gerenciar a fila
+-   executa primeiro toda a fila de maior prioridade e depois vai
+    descendo os níveis
+-   pode ser tanto preemptivo como não preemptivo, dependendo do
+    algoritmo escolhido
+-   pode ajustar a prioridade dinamicamente, para evitar inanição
+    (starvation, processos que nunca seriam executados devido a sua
+    baixa prioridade)
+
+#### Múltiplas filas
+
+-   cada fila pode ter características distintas (processos para
+    processamento em lote, processos interativos, processos com
+    prioridade, etc.)
+-   cada fila pode ter um algoritmo diferente para gerenciamento
+-   cada fila terá uma prioridade diferente
+-   pode ser preemptivo quando processos de maior prioridade entram
+-   pode dar-se um tempo de execução limitado para cada fila
+-   pode mover processos entre filas
+-   possui overhead no gerenciamento das filas
+-   pode sofrer de starvation
+
+#### Loteria
+
+-   cada processo recebe um ticket
+-   a cada troca de processo um ticket é sorteado, assim o processo
+    sorteado por ocupar a CPU
+-   pode dar mais tickets para um processo para aumentar a chance dele
+    ser sorteado(prioridade)
+-   é mais justo
+-   não é preemptivo
+-   possui variabilidade no tempo de resposta
+
+#### Fair-Share
+
+-   leva em consideração quem é o dono do processo (user, sistema, etc.)
+-   cada dono possui uma fração de tempo para usar a CPU, escalonando os
+    processos a partir dai
+-   se um user possui mais processos ele terá mais tempo
+
+
+
+
+
+
+
+
+### Escalonadores para sistemas de tempo real
+
+-   hard real time → não pode atrasar (critico)
+-   soft real time → alguns atrasados são tolerados
+-   eventos (periódicos ou aperiódicos) causam execução de processos
+-   algoritmos preemptivos
+-   algoritmos usados podem ser: estáticos (define a ordem de execução
+    antes) ou dinâmicos (avalia qual será executado em tempo de
+    execução)
+
+#### Earliest deadline first
+
+-   preemptivo e dinâmico
+-   tarefa com menor deadline tem prioridade
+-   se chegar um com menor deadline ele chaveia para este com menor
+-   possui overhead
+
+#### Rate monotonic scheduling
+
+-   preemptivo e estático
+-   prioridade é dada pela frequência de execução
+-   ótimo para sistemas periódicos e com processos independentes
+
+#### Least laxity first (last stack time first)
+
+-   escalona com base na folga (tempo restante até o deadline --- tempo
+    restante para completar a tarefa )
+-   processo com menor folga vai primeiro
+-   pode ter bastante overhead
+
+

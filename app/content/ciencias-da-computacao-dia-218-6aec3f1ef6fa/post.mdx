@@ -1,0 +1,35 @@
+
+
+
+
+
+### Ciências da computação dia 218
+
+Compiladores
+
+#### Tabela de Análise
+
+Dada uma gramatica, é analisado o conjunto First e Follow de cada regra
+
+![image](https://cdn-images-1.medium.com/max/800/1*xGppQMuArgP2USJXYLaWcA.png)
+
+Após isso, podemos utilizar esses símbolos de First e Follow para
+descrever qual a próxima regra quando encontrar certo token na sequência
+de entrada
+
+![image](https://cdn-images-1.medium.com/max/800/1*5qjQKkQRoDqwbfl-w8km5g.png)
+
+Nessa tabela, adicionamos todas as regras de baseando-se nos caracteres
+de First, contudo ao encontrar ε, é necessário preencher todas os
+símbolos de Follow com *simbolo → ε*
+
+Com isso, podemos testar entradas e verificar se estão ou não dentro da
+gramática
+
+![image](https://cdn-images-1.medium.com/max/800/1*2SkAbyAlU3JL8CROrYn3pQ.png)
+
+dessa forma, utilizamos a estrutura de pilha, e vamos expandindo os
+símbolos não terminais e casando os tokens. Se e a entrada terminarem
+com \$, então a entrada é válida.
+
+

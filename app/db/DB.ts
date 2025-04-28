@@ -16,6 +16,7 @@ export default class DB {
 			`
 				SELECT *
 				FROM posts
+				ORDER BY id DESC
 				LIMIT ?, 20;
 			`
 		);

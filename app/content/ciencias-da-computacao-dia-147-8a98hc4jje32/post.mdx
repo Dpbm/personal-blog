@@ -1,0 +1,42 @@
+
+
+
+
+
+### Ciências da computação dia 147
+
+organização de computadores
+
+#### RAM
+
+-   dividia em BIOS, OS, APPs e DATA.
+-   memória ROM também possui acesso aleatório.
+-   para testar a MP, é necessário testar cada bit, e caso um esteja
+    comprometido a máquina não liga, já que a confiabilidade foi
+    perdida.
+-   Ao ligar a máquina, a BIOS é carregada, essa, por sua vez, testa
+    todos os dispositivos de ES, e, se tudo ocorrer bem, o OS é
+    carregado para a MP.
+-   Uma vez que as instruções residem na memória, o tamanho da palavra
+    delas é definido pelo tamanho do barramento de dados.
+
+#### HD
+
+-   acesso sequencial.
+-   possui diversas trilhas e essas trilhas possuem diversos blocos,
+    geralmente de 512bytes, denominados setores.
+
+#### Registradores/CP/UP-DOWN
+
+-   registrador acumulador também é um registrador geral.
+-   contador de programa incrementa o endereço atual.
+-   ao usar tomada de decisões dentro de um software, o contador de
+    programa, ao invés de incrementar, ele vai para a primeira função
+    desse novo fluxo, o que consequentemente deixa a execução mais
+    lenta.
+-   quando é feita uma divisão, o quociente fica no contador up/down, e
+    através do multiplex ele vai para o registrador acumulador. Caso a
+    gente queira o resto, basta pegar o resultado da operação feita pela
+    ULA.
+
+

@@ -1,0 +1,37 @@
+
+
+
+
+
+### Ciências da computação dia 173
+
+linguagens formais e autômatos --- conversão
+
+Para minimizar o nosso AFND, podemos fazer a conversão dele para um AFD.
+Para isso faça:
+
+![image](https://cdn-images-1.medium.com/max/800/1*fk0IeHeaA6Kt9JtMHMLuqw.png)
+
+1.  liste todas as transições que um estado faz para outro como um
+    conjunto único, em seguida use esse conjunto como sendo o próximo
+    estado a ser observado na tabela:
+
+![image](https://cdn-images-1.medium.com/max/800/1*A5Qwd5qFbVnM6fhX5R-gCw.png)
+
+você para de testar novas combinações quando nenhuma combinação nova
+aparece como transição. Além disso, todo conjunto que tiver um estado
+final, também sera considerado um estado final (\*).
+
+Também, se houver uma parte desconexa com o automato principal, você
+pode desconsiderá-lo na conversão.
+
+2\. dê nomes as transições: Agora, você pega essas transições que foram
+descobertas e de nomes diferentes à elas (aliases).
+
+![image](https://cdn-images-1.medium.com/max/800/1*WO0DQPKuMuBQKXumKVyHlQ.png)
+
+3\. pronto, podemos pegar essa tabela e fazer um AFD
+
+![image](https://cdn-images-1.medium.com/max/800/1*0-xOoBz6UOXYLGhTOyD1ZQ.png)
+
+

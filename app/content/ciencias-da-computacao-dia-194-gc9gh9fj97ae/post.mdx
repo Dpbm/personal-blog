@@ -1,0 +1,33 @@
+
+
+
+
+
+### Ciências da computação dia 194
+
+arquitetura de computadores
+
+### Registradores
+
+Para um registrador geral com entrada serial ou paralela podemos fazer o
+seguinte:
+
+#### guardar valor de forma paralela
+
+seta o LOAD=1, ENABLE=X, e coloca-se os dados no barramento de dados,
+precisando por fim apenas de um pulso do clock para inserir os dados.
+
+#### guardar valor de forma serial
+
+seta o LOAD=0, ENABLE=1. Então, configura-se o tipo de shift, LEFT=1
+para shift left e LEFT=0 para shift right, lembrando que shift left
+multiplica o valor por 2 e shift right divide o valor por 2.
+
+Após setar isso, a cada pulso do clock(são necessários n, sendo n o
+numero de bits) é necessário adicionar 0 ou 1 na entrada Shift_L ou
+Shift_R (use o respectivo ao escolhido em LEFT). Sendo assim, conforme
+os pulsos vão passando, o valor atual setado em Shift_L/Shift_R seria
+movido para a esquerda ou direita configurando a sequência de bits
+desejada.
+
+

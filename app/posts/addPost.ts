@@ -1,5 +1,3 @@
-import readline from 'node:readline';
-import { stdin, stdout } from 'node:process';
 import path from 'node:path';
 import DB from '../db/DB';
 import { PostCardData } from '../types';
@@ -10,7 +8,6 @@ type Prompt = { prompt: string; func: Callback };
 type Prompts = Prompt[];
 
 const db = new DB();
-const rl = readline.createInterface({ input: stdin, output: stdout });
 
 //@ts-ignore
 var postData: PostCardData = {};
@@ -26,41 +23,17 @@ function generateSlug(title: string) {
 	return dashedTitle + '-' + randomString;
 }
 
-function setTitle(title: string) {
+(async () => {
+	const title = process.argv[2];
+	const subtitle = process.argv[3];
+	const currentPath = process.argv[4];
+
 	postData.title = title;
-	postData.slug = generateSlug(title);
-}
-
-function setSubTitle(subtitle: string) {
 	postData.subtitle = subtitle;
-}
+	postData.slug = generateSlug(title);
 
-function updatePath(currentPath: string) {
 	const newPath = path.join(currentPath, '..', postData.slug);
 	rename(currentPath, newPath, () => {});
-}
-
-function ask(prompt: Prompt): Promise<void> {
-	return new Promise((resolve) => {
-		rl.question(prompt.prompt, (answer: string) => {
-			prompt.func(answer);
-			resolve();
-		});
-	});
-}
-
-const prompts: Prompts = [
-	{ prompt: 'post title: ', func: setTitle },
-	{ prompt: 'post subtitle: ', func: setSubTitle },
-	{ prompt: 'post path: ', func: updatePath },
-];
-
-(async () => {
-	for await (const prompt of prompts) {
-		await ask(prompt);
-	}
-
-	rl.close();
 
 	// @ts-ignore
 	db.addPost(postData);

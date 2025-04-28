@@ -1,0 +1,98 @@
+
+
+
+
+
+### Ciências da computação dia 291
+
+Grafos --- árvores
+
+#### Árvores
+
+-   grafo conexo acíclico com um nó especial (root)
+-   cresce para baixo sem voltar
+-   árvores com n nós possuem n-1 arestas e 2n-2 extremidades (2 para
+    cada aresta)
+
+#### Árvore livre
+
+-   grafo conexo acíclico sem uma raiz especificada
+
+#### Floresta
+
+-   conjunto de árvores
+
+#### Ancestralidade
+
+-   ancestral → nó y anterior em algum nível de z
+-   descendente → nó z que tem y como ancestral
+-   filho → x é um ancestral direto de y
+-   pai → y é descendente direto de x
+-   folha → nó sem filhos
+-   nó interno → qualquer nó não folha
+
+#### Altura/profundidade da árvore
+
+-   maior profundidade dentre os nós
+
+#### Altura de um nó
+
+> Raiz = 0
+
+> filhos da raiz = 1
+
+> filhos dos filhos da raiz = 2
+
+> ...
+
+#### Grau
+
+-   número de filhos de um nó
+
+#### Árvore binária
+
+-   cada nó tem no máximo 2 filhos
+-   cada nó pode ter no mínimo 0 filhos
+
+#### Árvore binária cheia
+
+-   todas as folhas possuem mesma profundidade e os nós internos tem
+    grau 2
+-   total de vertices é 2\^(h+1) --- 1, onde h é a altura da árvore
+
+#### Árvore binária completa
+
+-   toda folha tem profundidade h ou h-1
+
+#### Representação em tabela
+
+-   somente para árvores binárias
+
+![image](https://cdn-images-1.medium.com/max/800/1*vBmHmrZjeZFWLHovas-eZA.png)
+
+#### Ordenação na árvore binária
+
+-   Pré-ordem (infixa/convencional) → nó, esquerda, direita
+-   Ordem/Simétrica (prefixa/polonesa) → esquerda, nó, direita
+-   Pós-ordem (posfixa/polonesa inversa) → esquerda, direita, nó
+-   notações podem ser usadas para aritmética em compiladores, já que
+    serão vistos como uma AST
+
+![image](https://cdn-images-1.medium.com/max/800/1*bKWWOTWTdydBkmQ7Id79sw.png)
+
+#### Busca
+
+-   busca padrão = O(n) → passa por cada elemento
+-   busca binária = O(log(n))
+
+#### Árvore de busca binária
+
+-   elemento da esquerda menor que o da direita
+-   é uma boa para ordenação. Basta usar a trajetória Ordem
+-   em uma lista de elementos (para montar a árvore) o primeiro é o root
+    e depois basta seguir colocando menor a esquerda do root e maior a
+    direita
+
+![image](https://cdn-images-1.medium.com/max/800/1*lB3QAFAMZ3zI7SOz3zvyxQ.png)
+
+
