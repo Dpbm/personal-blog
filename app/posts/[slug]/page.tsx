@@ -13,7 +13,6 @@ export default async function Page({ params }: PostPageParams) {
 	const db = new DB(new Mongo());
 	await db.connect();
 	const postData = await db.getPost(slug);
-	await db.closeConnection();
 
 	const { title, subtitle, date, slug: safeSlug } = postData;
 	const datetime = new Date(date);
