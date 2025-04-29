@@ -5,12 +5,13 @@
         "skipLibCheck": true,
         "esModuleInterop": true,
         "strict": true,
-        "outDir": "../../db_build",
+        "outDir": "./",
         "allowSyntheticDefaultImports": true,
         "module": "node16",
         "moduleResolution": "node16"
     },
     "include": [
-        "createDB.ts"
-    ]
+        "sql-to-mongo.ts"
+    ],
+    "exclude": []
 }

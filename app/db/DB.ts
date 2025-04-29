@@ -1,89 +1,38 @@
-import Database from 'better-sqlite3';
-import { dbFile, postsPerPage } from '../constants';
-import { PostCardData } from '../types';
-import mapToPostData from './toPostData';
+import { InsertionPostcardData, PostCardData } from '../types';
+import { Persistence } from './Persistence';
 
-export default class DB {
-	private database;
+export default class DB implements Persistence {
+	private provider: Persistence;
 
-	constructor() {
-		this.database = new Database(dbFile, { fileMustExist: true });
-		this.database.pragma('journal_mode = WAL');
+	constructor(provider: Persistence) {
+		this.provider = provider;
 	}
 
-	getPosts(offset: number): PostCardData[] {
-		const query = this.database.prepare(
-			`
-				SELECT *
-				FROM posts
-				ORDER BY id DESC
-				LIMIT ?, ?;
-			`
-		);
-
-		const data = query.all(offset, postsPerPage) || [];
-		return mapToPostData(data);
+	async connect(): Promise<void> {
+		await this.provider.connect();
 	}
 
-	getAllPosts(): PostCardData[] {
-		const query = this.database.prepare(
-			`
-				SELECT *
-				FROM posts;
-			`
-		);
-
-		const data = query.all() || [];
-		return mapToPostData(data);
+	async addPost(post: InsertionPostcardData): Promise<void> {
+		await this.provider.addPost(post);
 	}
 
-	getPost(slug: string): PostCardData {
-		const query = this.database.prepare(
-			`
-				SELECT * 
-				FROM posts 
-				WHERE slug=?;
-			`
-		);
-
-		const data = query.get(slug) || {};
-		return data as PostCardData;
+	async getPosts(offset: number): Promise<PostCardData[]> {
+		return await this.provider.getPosts(offset);
 	}
 
-	addPost(post: PostCardData): void {
-		// it's meant to be used via CLI
-		const query = this.database.prepare(
-			`
-				INSERT INTO 
-				posts(title, subtitle, slug, date)
-				VALUES(?, ?, ?, ?);
-			`
-		);
-
-		const result = query.run(
-			post.title,
-			post.subtitle,
-			post.slug,
-			Math.trunc(Date.now())
-		);
-		const id = result.lastInsertRowid;
-
-		console.log(`Inserted with id: ${id}`);
+	async getPost(slug: string): Promise<PostCardData> {
+		return await this.provider.getPost(slug);
 	}
 
-	countPosts(): number {
-		const query = this.database.prepare(
-			`
-				SELECT COUNT(*)
-				FROM posts;
-			`
-		);
-
-		const result = query.get() as number;
-		return result;
+	async getAllPosts(): Promise<PostCardData[]> {
+		return await this.provider.getAllPosts();
 	}
 
-	close(): void {
-		this.database.close();
+	async countPosts(): Promise<number> {
+		return await this.provider.countPosts();
+	}
+
+	async closeConnection(): Promise<void> {
+		await this.provider.closeConnection();
 	}
 }

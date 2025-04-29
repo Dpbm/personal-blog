@@ -5,12 +5,15 @@ import { getDateString } from '@/app/utils';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import './post.css'; // default styles for mdx
+import Mongo from '@/app/db/providers/mongo/mongo';
 
 export default async function Page({ params }: PostPageParams) {
 	const { slug } = await params;
 
-	const db = new DB();
-	const postData = db.getPost(slug);
+	const db = new DB(new Mongo());
+	await db.connect();
+	const postData = await db.getPost(slug);
+	await db.closeConnection();
 
 	const { title, subtitle, date, slug: safeSlug } = postData;
 	const datetime = new Date(date);
@@ -36,8 +39,11 @@ export default async function Page({ params }: PostPageParams) {
 	);
 }
 
-export function generateStaticParams() {
-	const posts = new DB().getAllPosts();
+export async function generateStaticParams() {
+	const db = new DB(new Mongo());
+	await db.connect();
+	const posts = await db.getAllPosts();
+	await db.closeConnection();
 
 	return posts.map((post) => ({
 		slug: post.slug,

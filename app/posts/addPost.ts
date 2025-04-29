@@ -2,12 +2,9 @@ import path from 'node:path';
 import DB from '../db/DB';
 import { PostCardData } from '../types';
 import { rename } from 'node:fs';
+import Sqlite from '../db/providers/sqlite/sqlite';
 
-type Callback = (_: string) => void;
-type Prompt = { prompt: string; func: Callback };
-type Prompts = Prompt[];
-
-const db = new DB();
+const db = new DB(new Sqlite());
 
 //@ts-ignore
 var postData: PostCardData = {};
@@ -35,7 +32,7 @@ function generateSlug(title: string) {
 	const newPath = path.join(currentPath, '..', postData.slug);
 	rename(currentPath, newPath, () => {});
 
-	// @ts-ignore
-	db.addPost(postData);
-	db.close();
+	await db.connect();
+	await db.addPost(postData);
+	await db.closeConnection();
 })();

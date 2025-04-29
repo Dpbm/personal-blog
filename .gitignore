@@ -43,3 +43,4 @@ next-env.d.ts
 *_build
 *.db-shm
 *.db-wal
+*.js

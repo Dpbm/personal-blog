@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3';
-import { dbFile } from '../constants';
+import { dbFile } from './constants';
 
 const db = new Database(dbFile, { fileMustExist: false });
 db.exec(`

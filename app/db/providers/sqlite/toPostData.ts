@@ -1,4 +1,4 @@
-import { PostCardData } from '../types';
+import { PostCardData } from '../../../types';
 
 export default function mapToPostData(data: any): PostCardData[] {
 	return data.map(
