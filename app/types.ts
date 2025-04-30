@@ -8,9 +8,3 @@ export type InsertionPostcardData = {
 export type PostCardData = InsertionPostcardData & {
 	id: number;
 };
-
-export type PostPageParams = {
-	params: Promise<{
-		slug: string;
-	}>;
-};

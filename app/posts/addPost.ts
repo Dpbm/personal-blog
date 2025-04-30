@@ -2,9 +2,9 @@ import path from 'node:path';
 import DB from '../db/DB';
 import { PostCardData } from '../types';
 import { rename } from 'node:fs';
-import Sqlite from '../db/providers/sqlite/sqlite';
+import Mongo from '../db/providers/mongo/mongo';
 
-const db = new DB(new Sqlite());
+const db = new DB(new Mongo());
 
 //@ts-ignore
 var postData: PostCardData = {};

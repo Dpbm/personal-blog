@@ -44,3 +44,5 @@ next-env.d.ts
 *.db-shm
 *.db-wal
 *.js
+
+!.env.example

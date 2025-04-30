@@ -1,13 +1,18 @@
 import IconLink from '@/app/components/iconLink';
 import DB from '@/app/db/DB';
-import { PostPageParams } from '@/app/types';
 import { getDateString } from '@/app/utils';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import './post.css'; // default styles for mdx
 import Mongo from '@/app/db/providers/mongo/mongo';
 
-export default async function Page({ params }: PostPageParams) {
+type PostPageProps = {
+	params: Promise<{
+		slug: string;
+	}>;
+};
+
+export default async function Page({ params }: PostPageProps) {
 	const { slug } = await params;
 
 	const db = new DB(new Mongo());

@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-cli:build": "tsc --project ./app/posts/script.tsconfig.json",
-    "posts:map": "tsc --project ./script.tsconfig.json"
+    "post-cli:build": "tsc --project ./app/posts/script.tsconfig.json"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -19,7 +18,6 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
     "@types/mdx": "^2.0.13",
-    "better-sqlite3": "^11.9.1",
     "mongoose": "^8.14.0",
     "next": "15.3.1",
     "react": "^19.0.0",
@@ -27,7 +25,6 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
