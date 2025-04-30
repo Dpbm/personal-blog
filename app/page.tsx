@@ -13,7 +13,7 @@ export default async function Home() {
 
 	return (
 		<main>
-			<section className='flex flex-col pt-20 pb-10 pl-10 pr-10 items-center w-screen'>
+			<section className='flex flex-col pt-20 pb-10 pl-10 pr-10 items-center w-full'>
 				<h1 className='text-5xl text-center mb-8'>
 					Hello I'm Alexandre (Aka DPBM)👋
 				</h1>
@@ -28,7 +28,7 @@ export default async function Home() {
 				</nav>
 			</section>
 
-			<section className='flex flex-col p-10 w-screen'>
+			<section className='flex flex-col p-10 w-full'>
 				<h1 className='text-2xl'>Recent Posts</h1>
 				<PostsList initialPosts={posts} totalPosts={totalPosts} />
 			</section>

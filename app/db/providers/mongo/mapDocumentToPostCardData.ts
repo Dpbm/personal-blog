@@ -2,7 +2,7 @@ import { PostCardData } from '../../../types';
 
 export function MapDocumentToPostCardData(document: any): PostCardData {
 	return {
-		id: document._id,
+		id: document._id.valueOf(),
 		title: document.title,
 		subtitle: document.subtitle,
 		date: document.date,

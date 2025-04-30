@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { PostCardData } from '../types';
 import PostCard from './post';
 
@@ -17,43 +17,22 @@ export default function PostsList({
 	const [loading, setLoading] = useState(false);
 	const [pointer, setPointer] = useState(1);
 
-	async function getData(p: number) {
-		if (p < pointer || loading || posts.length >= totalPosts) return;
+	const hasMorePosts = posts.length < totalPosts;
+
+	async function getData() {
+		if (loading || !hasMorePosts) return;
 
 		try {
 			setLoading(true);
 
-			const res = await fetch(`/api/posts?offset=${p}`);
+			const res = await fetch(`/api/posts?offset=${pointer}`);
 			const data: PostCardData[] = await res.json();
 			setPosts([...posts, ...data]);
-			setPointer(p + 1);
+			setPointer((p) => p + 1);
 
 			setLoading(false);
 		} catch (error) {}
 	}
-
-	useEffect(() => {
-		const handleScroll = async () => {
-			const windowHeight = window.innerHeight;
-			const documentHeight = document.documentElement.scrollHeight;
-			const scrollTop = window.scrollY;
-
-			const offsetInPX = 300;
-
-			const isAtBottom =
-				scrollTop + windowHeight >= documentHeight - offsetInPX;
-
-			if (isAtBottom) {
-				await getData(pointer);
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [pointer]);
 
 	return (
 		<li className='list-none'>
@@ -63,6 +42,17 @@ export default function PostsList({
 				))
 			) : (
 				<p className='text-xl mt-10'>No Posts yet!</p>
+			)}
+
+			{hasMorePosts && (
+				<div className='w-full flex flex-col items-center'>
+					<button
+						onClick={getData}
+						className='border p-5 w-100 cursor-pointer hover:opacity-40'
+					>
+						Load More Posts
+					</button>
+				</div>
 			)}
 		</li>
 	);

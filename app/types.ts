@@ -6,5 +6,5 @@ export type InsertionPostcardData = {
 };
 
 export type PostCardData = InsertionPostcardData & {
-	id: number;
+	id: string;
 };
