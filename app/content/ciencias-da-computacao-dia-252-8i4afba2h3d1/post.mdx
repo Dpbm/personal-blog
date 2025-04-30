@@ -25,7 +25,7 @@ A ideia aqui é descobrir se há alguma maneira de sair de um ponto,
 passar por todas as pontes, sem repetir nenhuma, e voltar ao ponto
 inicial.
 
-![image](image_402.png)
+![image](/image/image_402.png)
 
 esse problema, pode ser visto como um grafo não dirigido, possuindo 4
 vertices.
@@ -33,7 +33,7 @@ vertices.
 Nesse caso, para encontrar a solução, podemos olhar para o grau de cada
 nó.
 
-![image](image_403.png)
+![image](/image/image_403.png)
 
 > d(V1) = 3
 
@@ -47,7 +47,7 @@ Pensando que, para sair de um local, e voltar para ele sem repetir o
 trajeto, precisamos de um numero par de caminhos, esse problema não é
 possível, já que todos os trajetos são ímpar.
 
-![image](image_404.png)
+![image](/image/image_404.png)
 
 Mesmo reduzindo o numero de pontes, e deixando alguns graus pares, isso
 não será possível ainda.
@@ -66,17 +66,17 @@ como B. Todas estão nos cantos de uma certa forma. Aqui, queremos saber
 se é possível deixar essas peças no canto, deixando seus relativos lado
 a lado (pode ser tanto horizontal como vertical) movendo as apenas em L.
 
-![image](image_405.png)
+![image](/image/image_405.png)
 
 algo que poderíamos fazer é mapear as posições que cada posição do
 tabuleiro pode ir.
 
-![image](image_406.png)
+![image](/image/image_406.png)
 
 agora, podemos fazer um grafo com essas informações, para entender
 melhor o problema, será utilizado o layout circular.
 
-![image](image_407.png)
+![image](/image/image_407.png)
 
 Observando o grafo do problema, é possível ver que, mesmo movimentando
 as peças para a esquerda ou direita, é impossível conseguir inverter as

@@ -12,7 +12,7 @@ chamado de vai 1)
 para isso, faremos uma tabela verdade com todas as possibilidades de
 carry bit e de somas
 
-![tabela verdade para a soma](image_74.png)
+![tabela verdade para a soma](/image/image_74.png)
 
 repare que o actualCarry é o valor que será somado junto com A e B, e o
 carry é quando na ultima soma o resultado excede a base e seria
@@ -20,7 +20,7 @@ necessário mais um bit para colocar o valor na frente
 
 ex:
 
-![image](image_75.png)
+![image](/image/image_75.png)
 
 observe que, quando não é excedida a base o valor do vem é 0, e quando
 na ultima soma, (A + B + actualCarry) nesse caso o valor excede a base,
@@ -32,7 +32,7 @@ no entanto note uma coisa
 
 A e B esta duplicado
 
-![image](image_76.png)
+![image](/image/image_76.png)
 
 agora observe que o actualCarry ele sempre segue essa ordem, sendo
 assim, temos todas as combinações possíveis com 2 bits, levando em conta
@@ -53,7 +53,7 @@ entre as entradas A, B e actualCarry
 
 ficando algo assim:
 
-![circuito soma](image_77.png)
+![circuito soma](/image/image_77.png)
 
 
 
@@ -65,11 +65,11 @@ ficando algo assim:
 Agora pegando o circuito do carry com o mapa de karnaugh, temos
 
 
-![image](image_78.png)
+![image](/image/image_78.png)
 
-![image](image_79.png)
+![image](/image/image_79.png)
 
-![image](image_80.png)
+![image](/image/image_80.png)
 
 
 pegando os três implicantes e fazendo a soma de produtos temos:
@@ -78,7 +78,7 @@ f(a,b,c) = b.c +a.b + a.c
 
 obs:o 'c' nesse caso é o actualCarry
 
-![image](image_81.png)
+![image](/image/image_81.png)
 
 agora temos nosso somador completo de 2 bits
 

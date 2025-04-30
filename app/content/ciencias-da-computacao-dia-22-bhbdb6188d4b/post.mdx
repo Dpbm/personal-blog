@@ -72,16 +72,16 @@ e as colunas de C k, C k -1, C K --- 2, ....
 
 exemplo com BCD
 
-![numero de bits de paridade para BCD](image_10.png)
+![numero de bits de paridade para BCD](/image/image_10.png)
 
-![Tabela check de paridade](image_11.png)
+![Tabela check de paridade](/image/image_11.png)
 
 agora você deve adicionar nas linhas quais quer números de k bits, com
 exceção do 0 que sempre será 0, 0, 0, ... k
 
-![valores com k bits](image_12.png)
+![valores com k bits](/image/image_12.png)
 
-![tabela check de paridade completa](image_13.png)
+![tabela check de paridade completa](/image/image_13.png)
 
 agora para cada coluna C, veja as linhas que possuem 1
 
@@ -107,18 +107,18 @@ para montar o código de Hamming você terá linhas numeradas de 0 a 9 e m+
 k colunas, sendo m colunas onde você colocará os bits do código que você
 está transformando e k colunas com dígitos de paridade
 
-![criando a tabela do código de Hamming](image_14.png)
+![criando a tabela do código de Hamming](/image/image_14.png)
 
 abaixo dos números de 1--7, você colocará mi para cada valor que não
 será de paridade e pj para o valor de paridade, lembrando que a posição
 da paridade dependerá daqueles números de C3, C2, C1 que vimos antes na
 hora que pegamos as linhas que continham apenas 1 número 1
 
-![tabela do código de Hamming](image_15.png)
+![tabela do código de Hamming](/image/image_15.png)
 
 agora preencha os m com os valores do código
 
-![código BCD na tabela do código de Hamming](image_16.png)
+![código BCD na tabela do código de Hamming](/image/image_16.png)
 
 agora para preencher os P com a paridade que você escolher comparando as
 linhas da do check de paridade que possuiam os números 1
@@ -129,7 +129,7 @@ obs: no meu caso escolhi paridade par, mas não importa muito, você pode
 escolher ímpar, o que importa é você escolher uma paridade para seu
 código
 
-![tabela do código de Hamming pronta](image_17.png)
+![tabela do código de Hamming pronta](/image/image_17.png)
 
 pronto, agora você tem um código que detecta e corrige erros
 
@@ -141,7 +141,7 @@ recebido foi 1001011
 primeiro vamos checar se há um erro, para fazer isso iremos utilizar de
 novo as linhas do check de paridade que possuíam o numero 1
 
-![detectando o erro](image_18.png)
+![detectando o erro](/image/image_18.png)
 
 se todas as paridades derem a mesma que você escolheu o código recebido
 está certo, mas se ao menos 1 estiver diferente o código está errado
