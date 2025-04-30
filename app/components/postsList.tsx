@@ -48,9 +48,14 @@ export default function PostsList({
 				<div className='w-full flex flex-col items-center'>
 					<button
 						onClick={getData}
-						className='border p-5 w-100 cursor-pointer hover:opacity-40'
+						disabled={loading}
+						className={`border p-5 ${
+							!loading
+								? 'cursor-pointer hover:opacity-40'
+								: 'opacity-40'
+						}`}
 					>
-						Load More Posts
+						{loading ? 'Loading...' : 'Load More Posts'}
 					</button>
 				</div>
 			)}
