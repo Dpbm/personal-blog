@@ -15,6 +15,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	return posts.map((post: PostCardData) => ({
 		url: `${prodURL}${buildPostURL(post.slug)}`,
-		lastModified: new Date(post.date).toUTCString(),
+		lastModified: new Date(post.date).toISOString(),
 	}));
 }
