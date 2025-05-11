@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-cli:build": "tsc --project ./app/posts/script.tsconfig.json"
+    "post-cli:build": "tsc --project ./app/posts/script.tsconfig.json",
+    "post-cli:run": "node ./add_post_build/posts/addPost.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
