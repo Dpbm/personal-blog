@@ -3,7 +3,7 @@ import DB from '@/app/db/DB';
 import { getDateString } from '@/app/utils';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import './post.css'; // default styles for mdx
+import styles from './post.module.css'; // default styles for mdx
 import Mongo from '@/app/db/providers/mongo/mongo';
 
 type PostPageProps = {
@@ -37,8 +37,9 @@ export default async function Page({ params }: PostPageProps) {
 				{dateString}
 			</time>
 			<div className='mb-10'></div>
-
-			<MdxPost />
+			<div className={styles.post}>
+				<MdxPost />
+			</div>
 		</main>
 	);
 }

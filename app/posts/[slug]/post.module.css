@@ -1,0 +1,47 @@
+.post h3,
+.post h4,
+.post h2{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.post pre{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.post hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post a{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.post a:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.post ol{
+    list-style-type: decimal;
+    margin-left: 15px;
+}
+
+.post table{
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post th{
+    padding: 10px;
+}
+
+.post td{
+    padding: 10px;
+    text-align: center;
+}
