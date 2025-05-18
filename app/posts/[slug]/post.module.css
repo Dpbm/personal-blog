@@ -97,6 +97,10 @@
     background-color: #F1EFEC;
 }
 
+.post code{
+    word-break: break-word;
+}
+
 .post blockquote{
     width: 100%;
     padding: 10px;
@@ -108,4 +112,16 @@
 .post blockquote p::before{
     content: "> ";
 
+}
+
+@media (max-width:1020px) {
+    .post img{
+        width: 100%;
+    }
+}
+
+@media (max-width:520px){
+    .post pre code{
+        font-size: 12px;
+    }
 }
