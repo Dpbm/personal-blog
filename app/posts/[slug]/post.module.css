@@ -1,8 +1,24 @@
+.post *{
+    font-size: 20px;
+}
+
+.post h2{
+    font-size: 30px;
+}
+
+.post h3{
+    font-size: 25px;
+}
+
+.post h4{
+    font-size: 20px;
+}
+
 .post h3,
 .post h4,
 .post h2{
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 .post pre{
@@ -12,8 +28,8 @@
 }
 
 .post hr{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 40px;
+    visibility: hidden;
 }
 
 .post a{
@@ -44,4 +60,52 @@
 .post td{
     padding: 10px;
     text-align: center;
+}
+
+.post li{
+    list-style-type: disc;
+    margin-left: 15px;
+}
+
+.post p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.post img{
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.post a:has(img){
+    display: inline-block;
+}
+
+.post a:has(img) img{
+    display: block;
+}
+
+.post p:has(img){
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.post pre{
+    border-radius: 10px;
+    white-space: pre-wrap;
+    background-color: #F1EFEC;
+}
+
+.post blockquote{
+    width: 100%;
+    padding: 10px;
+    background-color: #DA6C6C;
+    color: white;
+    border-radius: 10px;
+}
+
+.post blockquote p::before{
+    content: "> ";
+
 }

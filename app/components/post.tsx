@@ -10,7 +10,7 @@ export default function PostCard({ post }: { post: PostCardData }) {
 
 	return (
 		<Link href={postURL}>
-			<ul className='border p-10 mb-10 rounded-md hover:opacity-40'>
+			<ul className='p-5 mb-5 hover:opacity-40'>
 				<h1 className='text-3xl text-wrap'>{post.title}</h1>
 				<h2 className='text-md text-wrap'>{post.subtitle}</h2>
 				<time
