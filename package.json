@@ -21,7 +21,7 @@
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.6.1",
     "mongoose": "^8.20.2",
-    "next": "15.3.6",
+    "next": "15.3.8",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "rehype-katex": "^7.0.1",
