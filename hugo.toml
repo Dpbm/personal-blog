@@ -1,7 +1,13 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://dpbmdev.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'DPBM Blog'
+theme = "shibui"
 
+
+[params]
+	[params.author]
+	  name = "Dpbm"
+	  email = "dpbm136@gmail.com"
 [markup]
    [markup.goldmark]
       [markup.goldmark.renderer]

@@ -11,7 +11,7 @@ find_posts(){
 move_mdx_to_md(){
 	local POST_PATH=$1
 	if [[ $POST_PATH =~ ".mdx" ]]; then
-		local NEW_PATH=$(echo "$POST_PATH" | sed 's/\.mdx/.md/')
+		local NEW_PATH=$(echo "$POST_PATH" | sed 's/post\.mdx/index.md/')
 		echo "Moving post from $POST_PATH to $NEW_PATH"
 		mv $POST_PATH $NEW_PATH 
 	fi 
