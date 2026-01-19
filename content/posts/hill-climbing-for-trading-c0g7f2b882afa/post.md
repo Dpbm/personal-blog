@@ -1,6 +1,7 @@
 ---
-title: Hill
-date: Climbing tags: ["computer science"]
+title: Hill Climbing for trading
+date: 2025-05-22
+tags: ["computer science"]
 draft: false
 ---
 # Hill Climbing for PETR4 stocks

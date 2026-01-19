@@ -1,6 +1,7 @@
 ---
 title: Classes
-date: 2025-04-28 tags: ["computer science"]
+date: 2025-04-28
+tags: ["computer science"]
 draft: false
 ---
 

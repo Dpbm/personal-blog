@@ -1,6 +1,7 @@
 ---
-title: Ciências
-date: da tags: ["computer science"]
+title: Ciências da computação dia 292
+date: 2025-05-13
+tags: ["computer science"]
 draft: false
 ---
 

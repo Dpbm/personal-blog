@@ -2,9 +2,7 @@
 set -e
 set -o pipefail
 
-GREEN='\033[0;32m'
-END='\033[0m'
-
+GREEN='\033[0;32m' END='\033[0m'
 
 find_posts(){
 	find . -regextype posix-extended -regex ".*post.(mdx|md)" -printf "%p\n"
@@ -21,13 +19,14 @@ move_mdx_to_md(){
 
 add_header(){
 	local FILE=$1
-	local TITLE=$2
+	local TITLE="$2"
 	local DATE=$3
 
 	cat <<EOF > tmp && cat $FILE >> tmp && mv tmp $FILE
 ---
 title: $TITLE
-date: $DATE tags: ["computer science"]
+date: $DATE
+tags: ["computer science"]
 draft: false
 ---
 EOF
@@ -94,8 +93,9 @@ move_images(){
 	done
 }
 
-TARGET_POSTS_FOLDER=./content/posts
-OLD_POSTS_FOLDER=./app/content
+TARGET_POSTS_FOLDER=./content/posts/
+BASE_OLD_POSTS_FOLDER=./app/
+OLD_POSTS_FOLDER="${BASE_OLD_POSTS_FOLDER}content/"
 
 if [ ! -d $TARGET_POSTS_FOLDER ]; then
 	echo -e "${GREEN}Creating folder: $TARGET_POSTS_FOLDER$END"
@@ -103,10 +103,10 @@ if [ ! -d $TARGET_POSTS_FOLDER ]; then
 fi
 
 echo -e "${GREEN}Moving old mdx files from $OLD_POSTS_FOLDER to $TARGET_POSTS_FOLDER"
-mv "$OLD_POSTS_FOLDER/*" "$TARGET_POSTS_FOLDER"
+mv $OLD_POSTS_FOLDER* "$TARGET_POSTS_FOLDER"
 
-echo -e "${GREEN}Deleting path $OLD_POSTS_FOLDER"
-rm -rf $OLD_POSTS_FOLDER
+echo -e "${GREEN}Deleting path $BASE_OLD_POSTS_FOLDER"
+rm -rf $BASE_OLD_POSTS_FOLDER
 
 echo -e "$GREEN+++++++++++++++++++++++++++++++++++++++++++++$END"
 
@@ -128,7 +128,7 @@ for post in $(find_posts); do
 	echo -e "${GREEN}title: $TITLE$END"
 	echo -e "${GREEN}date: $DATE$END"
 
-	add_header $post $TITLE $DATE
+	add_header $post "$TITLE" $DATE
 	move_images $post
 	move_mdx_to_md $post
 
@@ -137,6 +137,6 @@ for post in $(find_posts); do
 	sleep 1
 done
 
-OLD_IMAGES_PATH=./public/image
+OLD_IMAGES_PATH=./public/image/
 echo -e "${GREEN}Deleting path $OLD_IMAGES_PATH"
 rm -rf $OLD_IMAGES_PATH

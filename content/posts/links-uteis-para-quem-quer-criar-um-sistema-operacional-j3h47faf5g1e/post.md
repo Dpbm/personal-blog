@@ -1,6 +1,7 @@
 ---
-title: Links
-date: uteis tags: ["computer science"]
+title: Links uteis para quem quer criar um sistema operacional
+date: 2025-04-28
+tags: ["computer science"]
 draft: false
 ---
 https://digital.com/best-software-development-companies/program-your-own-os

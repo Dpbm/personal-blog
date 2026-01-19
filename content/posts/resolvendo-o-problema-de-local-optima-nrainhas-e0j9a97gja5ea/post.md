@@ -1,6 +1,7 @@
 ---
-title: Resolvendo
-date: o tags: ["computer science"]
+title: Resolvendo o problema de local optima - NRainhas
+date: 2025-05-11
+tags: ["computer science"]
 draft: false
 ---
 > for english version [click here](https://github.com/Dpbm/n-rainhas/blob/main/readme-en.md)

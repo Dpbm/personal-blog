@@ -1,6 +1,7 @@
 ---
-title: Análise
-date: e tags: ["computer science"]
+title: Análise e Projeto de Algoritmos - Parte 1
+date: 2025-04-28
+tags: ["computer science"]
 draft: false
 ---
 **Algoritmo** → procedimento computacional bem definido que recebe

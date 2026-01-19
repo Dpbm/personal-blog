@@ -1,6 +1,7 @@
 ---
-title: 1969-12-31
-date:  tags: ["computer science"]
+title: Ciências da computação dia 55
+date: 2025-04-28
+tags: ["computer science"]
 draft: false
 ---
 
