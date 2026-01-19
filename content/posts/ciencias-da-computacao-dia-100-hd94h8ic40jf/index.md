@@ -1,0 +1,168 @@
+---
+title: Ciências da computação dia 100
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Análise de viabilidade
+
+-   entender o mercado;
+-   base para um plano de negócios.
+
+
+
+
+
+
+
+
+### Ambiente setorial (mais próximo da empresa)
+
+-   clientes, fornecedores, concorrentes;
+-   parte mais próxima da empresa que exerce pressão sobre ela;
+-   se você não tiver estratégias/ for bom, os clientes vão para outras
+    empresas.
+
+
+
+
+
+
+
+
+### Macro ambiente externo
+
+-   Economia, Política/leis, tecnologia, cultura(se os funcionários não
+    estão adaptados, seu negócio cai);
+-   Forças externas que exercem pressão sobre a empresa;
+-   Através dessas forças, sua empresa pode cair ou subir no mercado,
+    dependendo das tendências.
+
+
+
+
+
+
+
+
+Se houver muita gente com muito dinheiro, comprando muito, e as empresas
+não conseguem produzir o suficiente, os preços sobem.
+
+
+
+
+
+
+
+
+### Ponto de equilíbrio
+
+-   ponto em que a empresa consegue pagar tudo, mas não lucra;
+-   Calculo que diz o mínimo que a empresa deve vendar para chegar nesse
+    ponto.
+
+
+
+
+
+
+
+
+### fluxo de caixa
+
+-   como o dinheiro está entrando e saindo.
+
+
+
+
+
+
+
+
+### Plano de negócio
+
+-   documento que diz se a empresa é viável no momento atual.
+
+
+
+
+
+
+
+
+Para fazer essa analise, é necessário um método. Aqui vão alguns dos
+passos
+
+#### 1 --- Segmentação e posicionamento no mercado (onde você quer atuar e porque)
+
+-   segmentar é dizer para quem você quer vender (de forma específica,
+    por idade, local, sexo, etc.);
+-   Você pode mesclar segmentos;
+-   Quando algo é muito novo e diferente, isso rouba clientes de outros
+    negócios, talvez, até mesmo, de outras áreas/segmentos;
+-   O porque nasce da necessidade encontrada.
+
+#### 2 --- Conhecer o ambiente do segmento de mercado escolhido
+
+-   estudar o mercado (segmento escolhido);
+-   Analise swot é uma das ferramentas usadas aqui;
+-   Aqui você olha o macro ambiente externo e o ambiente setorial.
+
+#### 3 --- Conhecer o público-alvo
+
+-   Olhar para seu cliente e entender ele;
+-   Pesquisa de mercado;
+-   Daqui sai a persona.
+
+#### 4 --- Definir estratégias e seus diferencias competitivos
+
+-   faça isso após entender a persona e seu segmento.
+
+#### 5 --- Defina um plano de marketing
+
+-   4Ps do marketing (preço (o cliente está disposto à pagar), praça
+    (local onde a empresa está), produto, promoção (como a empresa se
+    mostra, propaganda, etc.));
+-   Marketing não é apenas propaganda, mas também como a empresa se
+    mostra para os outros;
+-   Serviços geralmente tem mais retorno;
+-   Trocar algo de plástico para papel, além de sair mais barato, passa
+    a ideia de que sua empresa se preocupa com o meio ambiente.
+
+
+
+
+
+
+
+
+Por lei, você não pode praticar preços irreais de propósito para ganhar
+clientes, isso é antimercado e pode gerar multas. (Dumping)
+
+
+
+
+
+
+
+
+Se uma empresa opera sem lucro, é porque ela tem fluxo de caixa e,
+geralmente, usa para pagar o investimento inicial ou reinvestir.
+
+
+
+
+
+
+
+
+> No mercado, você não ganha dinheiro, você toma de alguém.
+
+

@@ -1,0 +1,25 @@
+---
+title: Ciências da computação dia 120
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Filas
+
+-   É uma lista restrita;
+-   FIFO(first in first out);
+-   Operações: Insere no fim e remove do começo;
+-   Segue a mesma ideia da pilha;
+-   Para atualizar a posição do primeiro da lista, ao invés de você
+    ficar passando todos os valores para frente, você pode usar uma
+    formula como essa ((fim + 1)%tamanho) para saber qual a posição do
+    próximo elemento, sem a necessidade de usar ifs.
+
+

@@ -1,0 +1,6 @@
+{{ $styles := resources.Get "css/socials.css" | minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+<div class="socials">
+	{{ .Inner }}
+</div>

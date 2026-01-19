@@ -1,0 +1,9 @@
+.socials{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.socials img{
+	height: 5em;
+}

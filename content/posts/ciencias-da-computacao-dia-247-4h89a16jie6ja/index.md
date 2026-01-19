@@ -1,0 +1,47 @@
+---
+title: Ciências da computação dia 247
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+-   Modo Kernel → acesso completo ao hardware e pode executar qualquer
+    instrução de máquina
+-   Modo usuário →instruções que o user pode executar (mais limitado)
+-   Programas de interface → parte que o usuário consegue mandar
+    instruções para a máquina (shell, programas GUI, etc.)
+-   SO básico → programa gigante que gerencia hardware e rotinas do
+    usuário. Funciona através de eventos que o usuário realiza
+-   MIPS = milhões de instruções por segundo
+-   ciclo de máquina = o PC executa 1 instrução de um ciclo
+-   Multi threading = simulação de mais núcleos, um thread é chaveado
+    para o outro
+-   multi-core = o SO deve manipular e gerenciar os cores (como se
+    fossem vários processadores)
+-   memória virtual = memória ram em disco
+
+
+
+
+
+
+
+
+#### IBM 360
+
+-   criação do MULTICS que serviu de base para o UNIX
+-   começa o uso de multi-programação (vários processos simultâneos)
+-   uso de SPOOLING → quando uma tarefa finaliza ele pega a próxima da
+    fila
+-   time sharing → executa um pouco de cada processo usando um único
+    núcleo
+-   terminais burros → vários users podem se conectar numa mesma máquina
+    que não faz nenhum processamento
+
+

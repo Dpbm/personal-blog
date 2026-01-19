@@ -1,0 +1,37 @@
+---
+title: Ciências da computação dia 241
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="plaintext"}
+S -> Aa
+A -> bA | b
+
+entrada: bba
+
+Pilha     Entrada    Ação
+$         bba$       push b
+$b        ba$        reduce b -> A
+$A        ba$        push b
+$Ab       a$         reduce Ab -> A
+$A        a$         push a
+$Aa       $          reduce Aa -> S
+$S        $          ENTRADA ACEITA
+```
+
+-   Por aceitar gramáticas com recursão à esquerda e ambiguidade, o
+    analisador shift-reduce pode reduzir tanto bA -\> A como Ab -\> A
+-   O compilador tenta reduzir tudo de uma vez, caso não de certo ele
+    tenta novamente
+-   Podemos, por exemplo, ir empilhando tudo, e depois ir juntando e
+    reduzindo
+
+

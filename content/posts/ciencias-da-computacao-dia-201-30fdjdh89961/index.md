@@ -1,0 +1,62 @@
+---
+title: Ciências da computação dia 201
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Arquitetura
+
+-   ajuda na manutenção de sistemas complexos
+-   certas linguagens podem não funcionar bem com certas arquiteturas
+-   técnicas e estruturas para organizar componentes e suas interações
+-   interações entre as partes é feito de forma padrão (interface)
+
+#### Componentes
+
+-   uma abstração do mundo real no sistema
+-   precisam ser específicos
+-   se crio um componente cliente, em todas as camadas eu tenho q ter um
+    componente cliente também
+
+#### Camada
+
+-   parte usada para gerenciar a arquitetura
+-   separação de acordo com os interesses, em partes comuns do código
+
+> Um sistema é um conjunto de subsistemas;
+
+> Cada sub-sistema é separado em módulos;
+
+> Cada módulo é dividido em várias camadas;
+
+> Cada camada é especializada em uma única coisa;
+
+> Por fim em cada camada temos vários componentes.
+
+#### MVC
+
+-   Model, View, Controller
+-   View não pode acessar o banco de dados
+-   Model → todas as regras de negócio
+-   View → todas as interações com o user
+-   Controller → parte que recebe os requests e verifica se é necessário
+    usar um view ou model
+
+#### N-Camadas
+
+-   user interface → parte de interação com o user
+-   Business logic → limites e ações do user(um pouco diferente do model
+    em MVC)
+-   Data Access (DAL) → aqui é feita a interação com o BD, contudo temos
+    dois componente nessa camada, o primeiro chama-se DAO, esse é
+    responsável por apenas acessar os dados, e o segundo é o DTO,
+    responsável por transmitir os dados.
+
+

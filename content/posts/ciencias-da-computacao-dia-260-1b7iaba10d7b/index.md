@@ -1,0 +1,90 @@
+---
+title: Ciências da computação dia 260
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+-   média, moda e mediana podem ser usados para dados → não agrupados,
+    agrupados sem intervalos de classe e agrupados com intervalos de
+    classe
+
+#### Média aritmética simples
+
+![image](image_419.png)
+
+-   sendo *n* o total de elementos da amostra
+
+
+
+
+
+
+
+
+#### Média aritmética ponderada
+
+-   valores possuem pesos diferentes
+
+![image](image_420.png)
+
+-   sendo *w* o pesos de cada elemento
+
+
+
+
+
+
+
+
+#### Mediana(Md)
+
+-   valor do meio do ROL (tanto faz crescente ou decrescente)
+-   para n ímpar → (n+1)/2 é o índice do elemento do meio que representa
+    a mediana
+-   para n par → x1=(n/2) e x2=(n/2)+1 representa os indices dos dois
+    elementos centrais, após pega-los basta fazer: (x1+x2)/2 e assim
+    teremos a mediana
+
+
+
+
+
+
+
+
+#### Média e Mediana usos
+
+-   dão uma ideia de qual valor você encontrará se você tirar um
+    elemento ao acaso
+-   quando há outliers nos dados, mediana representa melhor o conjunto
+    de dados do que a média
+-   Mediana é usada também quando quer-se dividir a distribuição em
+    partes iguais
+
+
+
+
+
+
+
+
+#### Moda
+
+-   valor(es) que mais aparece(m)
+-   amodal → não há moda no conjunto
+-   unimodal → apenas um valor (uma moda)
+-   bimodal → dois valores aparecem o mesmo tanto de vezes e ambos são
+    modas
+-   trimodal → 3 modas
+-   polimodal → mais de 3 modas
+
+> {1, 2, 5, 5, 6, 6, 7, 8} → bimodal, pois 5 e 6 aparecem duas vezes
+
+

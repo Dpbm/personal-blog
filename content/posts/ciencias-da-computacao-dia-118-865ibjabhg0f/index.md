@@ -1,0 +1,40 @@
+---
+title: Ciências da computação dia 118
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Estrutura caso de uso estruturado
+
+1 --- Nome do caso de uso(começa com um verbo no infinitivo);
+
+2 --- Atores;
+
+3 --- Caso de sucesso (fluxo principal);
+
+4 --- Extensões (exceções).
+
+pré-condições e pós-condições são opcionais.
+
+
+
+
+
+
+
+
+### Extensões
+
+-   Ao usar '\*' , isso significa que essa exceção funciona para
+    qualquer um dos passos do fluxo principal, podendo haver mais de um,
+    para isso identifique como: \*.a, \*.b, \*.c, etc.;
+-   Uma extensão pode possuir extensões dentro.
+
+

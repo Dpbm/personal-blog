@@ -1,0 +1,91 @@
+---
+title: Ciências da computação dia 53
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+![[Vlado
+Paunovic](https://unsplash.com/@vlado)](https://cdn-images-1.medium.com/max/800/0*A1_rrmX0knE05S69)
+
+No quinquagésimo terceiro dia de ciências da computação, entramos
+novamente em matemática, mas dessa vez vimos matrizes e algumas
+operações que podemos fazer com elas.
+
+
+
+
+
+
+
+
+Uma matriz é representada por uma tabela de ***m*** linhas por ***n***
+colunas, possuindo um total de elementos dado por ***m\*n.***
+
+Sua representação gráfica pode ser dada por uma tabela de elementos
+envolvidos por \[\], () ou ainda \|\| \|\| (note que são dois \|, se
+fosse apenas um você estaria calculando o determinante do que está
+dentro deles).
+
+Além da notação gráfica, a matriz pode ser escrita como ***Am\*n***, do
+qual A é a matriz e **m\*n** representa seu tamanho. Além disso, a
+representação de seus elementos é dado pela letra minúscula da letra da
+matriz seguido de seu endereço, ex: ***aij***, onde i representa em qual
+linha o elemento está e j em qual coluna ele está. Sendo assim, podemos
+representar uma matriz também como ***(aij)m\*n***.
+
+Além disso existem algumas denominações para certas matrizes:
+
+-   matriz coluna → matriz em que o número de colunas (n) é igual a 1.
+-   matriz linha → matriz em que o número de linhas (m) é igual a 1.
+-   matriz nula → matriz em que todos os elementos são 0 (pode ser
+    escrita como 0m\*n).
+-   matriz transposta → matriz em que as linhas e colunas são invertidas
+    de uma matriz inicial (representado como A\^t m\*n).
+-   matriz quadrada → matriz em que a quantidade de linhas e colunas são
+    iguais (m = n).
+-   matriz identidade → matriz em que a diagonal principal (elementos
+    com index i = j) todos os elementos são 1 e o resto é 0.
+
+
+
+
+
+
+
+
+### Igualdade de matrizes
+
+Quando dizemos igualdade entre matrizes, queremos dizer que cada
+elemento é igual a o elemento na posição correspondente da outra matriz.
+
+Exemplo:
+
+\[3 6 0\] = \[3 (2\*x) (x-3) \]
+
+Como podemos ver, isso é uma igualdade, do qual o ***x*** representa o
+valor 3.
+
+
+
+
+
+
+
+
+### Outras anotações
+
+A um tempo atrás me deixava levar pela ideia dos número complexos e, em
+minha mente, toda raiz (de seja qual for o índice) de número negativo
+não existia, mas nessa aula me deparei com a raiz cúbica de -27, na hora
+disse: "a vai dar algo com *o número complexo* ***i***", mas claramente
+que não, o i=√-1, e não raiz cúbica, sendo assim a raiz cúbica de -27 é
+3.
+
+

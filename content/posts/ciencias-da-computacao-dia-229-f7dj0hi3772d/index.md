@@ -1,0 +1,22 @@
+---
+title: Ciências da computação dia 229
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+Mobile systems --- tabela de esforço/valor
+
+Primeiro são enumeradas as tarefas e são coladas em uma tabela como
+essa:
+
+![image](image_369.png)
+
+quanto maior o valor e menor o esforço melhor
+
+

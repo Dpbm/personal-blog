@@ -1,0 +1,87 @@
+---
+title: Ciências da computação dia 287
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Roteamento estático
+
+-   configuração manual das rotas entre roteadores
+-   para redes menores e mais simples
+-   definição dos IPs de destino, mascará de rede e próximos saltos
+-   mais seguros (não depende de protocolos)
+-   requer muita manutenção
+-   não é escalável
+
+![image](image_475.png)
+
+![image](image_476.png)
+
+
+
+
+
+
+
+
+### Roteamento Dinâmico
+
+-   utiliza protocolos como OSPF, EIGRP e BGP
+-   protocolos monitoram mudanças na topologia
+-   roteamento se baseia em algoritmos para travessia de grafos (como
+    Dijkstra) levando em consideração coisas como banda, número de
+    saltos, latência, etc.
+
+#### Protocolo RIP
+
+-   baseado em vetor de distância
+-   antigo
+-   suporta até 15 saltos
+-   verifica atualização na rota a cada 30s
+-   para redes simples
+-   leva em consideração o número de saltos para definir a melhor rota
+-   pode gerar loops em redes grandes
+-   convergência lenta (para trocar de rota)
+
+#### EIGRP
+
+-   da CISCO
+-   baseado no algoritmo DUAL
+-   híbrido entre vetor de distância e estado de enlace (vê se a conexão
+    está boa)
+-   rápida convergência, suporta vários protocolos, tolerância a falhas,
+    utiliza várias métricas
+-   capaz de entregar as informações na ordem certa
+-   envia por outras rotas caso uma falhe
+-   balanceamento de carga
+-   escalável
+
+#### OSPF
+
+-   Open Shortest Path First
+-   protocolo com estado de enlace (link-state)
+-   suporta sub-redes e área
+-   entrega na ordem
+-   balanceamento de carga
+-   atualiza rapidamente a rota em resposta a mudanças na topologia
+    (caso algum cabo rompa, ou algum aparelho quebre, etc.)
+-   usa o algoritmo de Dijkstra
+
+#### BGP
+
+-   Border Gateway Protocol (interno)
+-   EBGP para externo
+-   roteamento para sistemas autônomos
+-   para políticas de roteamento complexos
+-   suporta propagação de rotas entre diferentes domínios
+-   métricas: número de saltos, confiabilidade e preferência local
+    (roteadores locais)
+
+

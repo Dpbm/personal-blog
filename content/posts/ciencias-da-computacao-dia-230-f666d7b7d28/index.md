@@ -1,0 +1,75 @@
+---
+title: Ciências da computação dia 230
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+para fazer subtrações em binário, podemos fazer da seguinte forma
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="markdown"}
+  10  -> 2 
+- 01  -> 1
+-----
+
+   1
+  00 --> o zero mais a direita pega 1 empresato e fica 10 (2 em decimal)
+- 01
+-----
+  01  -> 1
+  
+   
+```
+
+Com isso, podemos fazer a seguinte tabela verdade para um meio subtrator
+
+![image](image_370.png)
+
+usando os mintermos de S e VOUT, podemos criar uma expressão usando a
+soma de produtos da seguinte forma:
+
+> *S = (A'B) + (AB') = XOR*
+
+> *VOUT = A'B*
+
+gerando o circuito
+
+![image](image_371.png)
+
+
+
+
+
+
+
+
+Para o subtrator completo, podemos seguir o mesmo padrão, mas dessa vez
+usando mais uma entrada (VIN) da qual receberá o valor "emprestado" e
+para gerar as saídas S e VOUT será necessário fazer *A-B-VIN*
+
+![image](image_372.png)
+
+sendo então
+
+> S = (A' B' VIN) + (A' B VIN') + (A B' VIN') + (A B VIN)
+
+> VOUT = (A' B' VIN) + (A' B VIN') + (A' B VIN) + (A B VIN)
+
+> VOUT = VIN(A'B' + A'B + AB) + (A' B VIN')
+
+> VOUT = VIN(A'(B' + B) + AB) + (A' B VIN')
+
+> VOUT = VIN(A'1 + AB) + (A' B VIN')\
+> VOUT = VIN((A' + A) (A' + B)) + (A' B VIN')
+
+> VOUT = VIN(A'+B) + (A' B VIN')
+
+![image](image_373.png)
+
+

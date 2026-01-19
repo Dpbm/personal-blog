@@ -1,0 +1,44 @@
+---
+title: Ciências da computação dia 198
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+> Toda função continua em um ponto x1 é derivável naquele ponto
+
+#### regra da função constante
+
+![image](image_323.png)
+
+#### Regra da potência
+
+![image](image_324.png)
+
+#### Regra do produto por uma constante
+
+![image](image_325.png)
+
+#### Regra da soma
+
+![image](image_326.png)
+
+#### Regra do produto
+
+![image](image_327.png)
+
+#### Regra da divisão
+
+![image](image_328.png)
+
+#### Regra da potência negativa
+
+![image](image_329.png)
+
+

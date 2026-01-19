@@ -1,0 +1,141 @@
+---
+title: Ciências da computação dia 129
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Subqueries
+
+-   comando select embutindo em outro select
+-   retorna um conjunto de linhas para a query principal
+-   pode ser usado: no where, como uma expressão (coluna), no lugar de
+    uma tabela, no comando IN e no comando EXISTS
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+#no IN
+SELECT numero
+  FROM nfe
+  WHERE numero IN (
+    SELECT numero
+      FROM item_nfe
+      WHERE quantidade >= 10
+  );
+
+#como tabela (caso raro de acontecer)
+SELECT cidade.idcidade, cidade.nome, TB.qtde_bairro
+  FROM cidade
+  JOIN  (
+    SELECT idcidade, COUNT(*) as qtde_bairro
+      FROM bairro
+      GROUP BY idcidade
+  ) as TB
+  ON (cidade.idcidade = TB.idcidade);
+
+#como uma coluna(expressão)
+SELECT descricao, valor_unitario (
+  SELECT AVG(valor_unitario)
+    FROm produto
+) as media
+  FROM produto;
+```
+
+
+
+
+
+
+
+
+### Subquery correlata
+
+-   subquery que faz referência a colunas da query principal
+-   executa 1 vez para cada linha da query principal (nested loop join)
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+#como coluna
+SELECT numero, data, (
+  SELECT SUM(quantidade * valor_unitario)
+    FROM item_nfe
+    JOIN produto 
+    ON (item_nfe.idproduto = produto.idproduto)
+    WHERE item_nfe.numero = nfe.numero
+) as total
+  FROM nfe;
+
+#no EXISTS
+SELECT * 
+  FROM bairro
+  WHERE EXISTS(
+    SELECT 1
+      FROM ceps
+      WHERE ceps.idbairro = bairro.idbairro
+        AND auxiliar IS NOT NULL
+  );
+```
+
+
+
+
+
+
+
+
+### EXISTS
+
+-   vê se a relação devolve alguma linha
+
+
+
+
+
+
+
+
+### SELECT 1
+
+-   seta o valor 1 para cada linha retornada
+-   usado quando você não se importa com os dados em si
+-   você pode trocar o 1 por qualquer outra coisa
+
+
+
+
+
+
+
+
+### CASE
+
+-   retorna dados para uma coluna
+
+
+
+
+
+
+
+
+### Having
+
+-   filtra valores das resultantes das funções de grupo (já que o where
+    não funciona)
+-   espécie de where para funções de grupo
+-   aparece depois do GROUP BY
+-   pode ser usado com os operadores do WHERE também, como o AND, OR,
+    NOT, IS NOT NULL, BETWEEN, etc.
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="sql"}
+SELECT numero, SUM(quantidade) as qtde
+  FROM item_nfe
+  GROUP BY numero
+  HAVING qtde > 10;
+```
+
+

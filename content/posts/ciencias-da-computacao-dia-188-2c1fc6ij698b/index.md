@@ -1,0 +1,32 @@
+---
+title: Ciências da computação dia 188
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Maquina de Turing
+
+-   automato capaz de representar qualquer algoritmo computacional
+-   é um AFD
+-   não precisa de transições para todos os estados
+-   ele começa a ler a fita a partir de um símbolo inicial (como um
+    **δ)**
+-   cada transição tem 3 parâmetros(leia -\> escreva, vá)
+-   vá pode ser direita ou esquerda
+-   quando você não quer escrever outro valor, você coloca o mesmo (A
+    -\> A)
+-   pense em uma fita infinita, do qual uma cabeça de leitura pode ler,
+    modificar valores e ir para a direita ou esquerda
+
+![image](image_307.png)
+
+nesse caso, *d* representa **δ** e *3* representa **ε**
+
+

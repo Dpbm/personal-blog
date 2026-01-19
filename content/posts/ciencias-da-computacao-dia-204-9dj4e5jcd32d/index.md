@@ -1,0 +1,30 @@
+---
+title: Ciências da computação dia 204
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+-   nunca coloque textos puros, sempre utilize as labels configuradas em
+    strings.xml, pois assim fica mais de fazer traduções depois
+-   ciclo de vida de atividades → como a atividade vai iniciar e
+    terminar(oncreate, onpause, onresume, ondestroy, etc.)
+
+![https://developer.android.com/guide/components/activities/activity-lifecycle](image_331.png)
+
+-   banco de dados padrão é o sqlite(local)
+-   cache é feito através do SharedPreferences (chave-valor)
+-   Pensando em como o app deve agir em relação a login, depende de que
+    tipo de app é e deve ser levado em consideração que é algo pessoal.
+    Sendo assim, apps de bancos pendem para logar a cada certo período
+    de tempo, já apps como redes sociais não vale a pena, já que,
+    teoricamente, só o dono irá usar
+-   Jetcompose → nova maneira de criar widgets usando código kotlin
+
+

@@ -1,0 +1,63 @@
+---
+title: Ciências da computação dia 138
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Árvores AVL
+
+-   Árvore de busca binária balanceada
+-   balanceada com respeito a altura das sub-arvores
+-   altura maxima entre sub-arvores é de +- 1 (1 ≤ \|hL --- hR\| ≥ -1)
+-   Para inserir nessa árvore, usamos o mesmo algoritmo das árvores de
+    busca binária, depois checamos o balanceamento, caso esteja
+    desbalanceado, rotacionamos o primeiro nó que quebrou o
+    balanceamento.
+-   Para remover é quase a mesma coisa de inserir, só que dessa vez você
+    aplica a rotação contrária.
+
+![exemplo arvore avl](image_222.png)
+
+
+
+
+
+
+
+
+### Rotações
+
+#### LL (left-left)
+
+![image](image_223.png)
+
+![image](image_224.png)
+
+#### LR (left-right)
+
+![image](image_225.png)
+
+![image](image_226.png)
+
+#### RR (right-right)
+
+![image](image_227.png)
+
+![image](image_228.png)
+
+#### RL (right-left)
+
+![image](image_229.png)
+
+![image](image_230.png)
+
+#### Nota: LR é o mesmo que LL e depois RR
+
+

@@ -1,0 +1,22 @@
+---
+title: Ciências da computação dia 240
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+-   DTO → ao invés de enviar o modelo do banco, você pega DTOs, dos
+    quais mapeiam apenas os dados necessários que o usuário pode ver do
+    banco e coloca em uma classe.
+-   A camada DATA de micro serviços também é conhecida como DAO Layer
+-   DAO → design pattern da camada de dados
+
+![image](image_388.png)
+
+

@@ -1,0 +1,24 @@
+---
+title: Ciências da computação dia 208
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### derivadas laterais
+
+-   uma função é derivavel em x se suas derivadas laterias são iguais
+
+![image](image_336.png)
+
+#### Derivada de funções compostas
+
+![image](image_337.png)
+
+

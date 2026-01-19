@@ -1,0 +1,63 @@
+---
+title: Ciências da computação dia 175
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Diagrama de sequência
+
+-   representa o ciclo de vida de um caso de uso
+-   usado para casos de uso complexos (dos quais envolvem varias classes
+    e métodos)
+-   comunicação entre objetos (troca de mensagens)
+-   métodos/classes precisam estar previstos no diagrama de classes
+-   parte sempre de um ator
+-   define objetos já instanciados e novos que serão instanciados
+    durante a execução
+-   \* → indica que uma mensagem pode ser ativada varias vezes
+-   quem recebe a mensagem é quem executa o método
+-   parâmetros e seus retornos também também podem ser representados nas
+    mensagens
+-   condições são configuradas dentro de → \[\]
+
+![image](image_281.png)
+
+Nesse exemplo de diagrama, começamos com o ator. Logo abaixo dele, é
+possível ver uma linha tracejada, isso representa a linha de vida de um
+objeto/ator. Sobre a linha de vida, há algumas caixas na vertical, elas
+representam as caixas de ativação, essas mostram o tempo de execução de
+uma chamada.
+
+Logo a frente do ator, há dois objetos (a e b), esses são objetos que já
+estavam instanciados antes, por isso são colocados ao lado do ator.
+
+Na horizontal, temos setas mais escuras que representam as chamadas de
+métodos aos objetos. Repare que temos dois casos especiais,
+\<\<create\>\> do qual cria uma nova instância de uma classe, e kill
+(com um x na ponta), do qual finaliza a vida de um objeto. Além disso,
+há linhas de retorno, representam os retornos dos métodos.
+
+
+
+
+
+
+
+
+#### Notas
+
+![image](image_282.png)
+
+Simbolo do qual representa composição.
+
+-   Não é necessário usar todos os métodos no diagrama de máquina de
+    estados
+
+

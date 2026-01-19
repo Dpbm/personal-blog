@@ -1,0 +1,176 @@
+---
+title: Ciências da computação dia 52
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+![foto por [Hans-Jurgen
+Mager](https://unsplash.com/@hansjurgen007)](https://cdn-images-1.medium.com/max/800/0*jvlgR4FjoUiFK4yy)
+
+Seguindo na aula de sistemas digitais, continuamos a ver sobre a UCP, no
+entanto com um pouco mais de detalhes.
+
+
+
+
+
+
+
+
+### Trafego dos dados
+
+Primeiramente é necessário entender como os dados trafegam até serem
+processador pela ULA. Bom, antes de tudo, um programa deve estar rodando
+na memória principal, a partir daí a UCP fará o trabalho pesado. Em seu
+**registrador de instrução** a primeira instrução deste programa estará
+armazenado, assim como em seu **contador de programa** estará a
+referência para a próxima instrução a ser executada(o endereço da
+memória). Com isso, a cada pulso do **clock** uma ação será executada
+pela UCP. Quando a instrução for de salvar algo no acumulador para a
+realização de um cálculo, os operandos trafegaram pelo barramento de
+dados até chegarem aos **registradores gerais** e o operador chegará
+pelo barramento de controle, dessa forma ao passar pela ULA ela terá as
+informações de o que operar e como.
+
+Após a operação, o dado resultante será armazenado no registrador
+acumulador e também seguirá para frente no circuito, passando para a
+memória e voltando também para o começo desse circuito.
+
+É necessário entender, também, que, várias operações sucessivas não são
+possíveis de serem feitas de uma vez na ULA, primeiro é necessário
+quebrar em operações de 2 operandos (seguindo sempre a ordem de
+precedência matemática), até operar todos os números de uma expressão,
+isso é feito pelo compilador, ou qualquer outro sistema utilizado em uma
+linguagem de programação.
+
+
+
+
+
+
+
+
+### **Tamanho dos Barramentos**
+
+Geralmente quando falamos de tamanho de barramentos, temos um problema
+em entender certinho como seu tamanho influencia as coisas dentro de um
+computador. Mas, aqui, vou tentar dizer de uma forma simples aquilo que
+aprendi sobre esse tema.
+
+Bom, primeiramente, os barramentos são as partes responsáveis por
+trafegar dados e sinais para todo o computador, desde informações
+capturadas por um programa até sinais de clock. A partir do comprimento
+desse barramento (dado em bits), podemos dizer qual arquitetura vamos
+trabalhar e ainda qual a capacidade de armazenamento podemos ter.
+
+Pensando hoje em dia, os computadores em sua maioria são de 64bits, e
+alguns menos comuns são de 32bits. Esse número mágico insinua a
+quantidade de bits que podem ser lidos de uma só vez pelo processador,
+sendo assim, se meu computador é de 64bits e meus barramentos são de
+32bits, é necessário um ciclo a mais para ler a informação por completa,
+ou seja terei uma lentidão maior no processamento. Já no caso contrário,
+onde meu computador tem barramentos de 64bits e eu trafego dados de
+32bits, não terei problemas aparentes, uma vez que as linhas que não
+possuem energia serão entendidas como 0 e no final ainda terei 64bits,
+só que dessa vez com vários 0.
+
+Sendo assim, o tamanho dos barramentos devem seguir o formato que os
+fabricates fizeram para que tudo funcione bem. Se a capacidade máxima de
+processamento de uma UCP é de 64bits e meus barramentos são de 128bits,
+não necessariamente vou ter ganhos, no geral o que aconteceria seriam
+menos possibilidades de **overflow** e o **gasto maior com essa
+máquina**
+
+
+
+
+
+
+
+
+No caso da UCP temos três barramentos importantes, de dados, o de
+endereços e o de controle. O barramento de dados diz o tamanho da
+palavra de informação que será trafegada de uma vez, com isso esse
+tamanho também diz qual o tamanho da palavra que será armazenada na
+memória (RAM e CACHE) e nos registradores. Ou seja, ao colocar dois
+números de 64bits nos registradores gerais, se por algum acaso o número
+resultante exceder esse tamanho, teremos um **overflow**, que será
+alertado para o sistema através do **registrador de status**. No geral,
+quem diz qual o tamanho esse barramento terá é a arquitetura da ULA,
+sendo assim, primeiramente é definido a arquitetura da ULA e depois esse
+tamanho é passado para o barramento de dados.
+
+Esse barramento, como é pressuposto pelo seu nome, carrega os dados que
+estão em memória, podendo ser tanto dados necessários para a execução de
+programas, como também instruções que são usadas por esses programas.
+
+
+
+
+
+
+
+
+Já o barramento de controle, trafega dados de clock (0 e 1), e sinais no
+geral, que controlam quando as operações devem ser feitas, quais
+operações devem ser feitas, etc.
+
+
+
+
+
+
+
+
+Por último, indo para a memória, temos o barramento de endereços. Esse
+barramento trafega os endereços dos registradores da memória. A
+quantidade máxima de memória que um computador pode endereçar é dado
+pelo tamanho desse barramento, ou seja, se meu barramento possui 30bits,
+minha memória pode ser endereça com 2³⁰ posições diferentes, ou 1Gb. Com
+isso, o tamanho do endereço é dado pelo tamanho do barramento de
+endereços. Isso também vale para a memória CACHE, mas no geral por ser
+muito menor que a memória principal, não é necessário se preocupar com a
+quantidade que pode ser endereçado da CACHE, já que qualquer computador
+hoje em dia possui pelo menos 4Gb de ram e a CACHE não passa da marca
+dos 512Mb.
+
+
+
+
+
+
+
+
+### ALGUMAS NOTAS
+
+w(parte de escrita na memória) = x + y (parte de leitura da memória)
+
+Contador bidirecional → consegue aumentar e diminuir valores (por
+exemplo o UP-DOWN)
+
+Micro-instruções → instruções feitas no hardware
+
+multiplexador → a partir dos dados de entrada e de um sinal, é possível
+dizer qual dado de entrada será escolhido para as operações.
+
+A memória principal possui várias áreas por exemplo, área de dados (onde
+os dados serão guardados), área de programas(onde as instruções dos
+programas serão guardados)
+
+Cada core de um computador possui uma ULA e seus registradores
+
+A memória CACHE é do tipo SRAM → vem de static random access memory, ou
+seja não perde memória com o tempo, apenas se não houver energia
+
+Mapeamente associativo → vê se um dado está na CACHE, se estiver ele
+pega de lá, senão estiver ele pega da memória principal escreve na CACHE
+(se não houver espaço ele apaga um pouco) e assim continua o ciclo
+
+

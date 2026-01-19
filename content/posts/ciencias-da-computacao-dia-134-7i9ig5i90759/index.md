@@ -1,0 +1,111 @@
+---
+title: Ciências da computação dia 134
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Classe concreta
+
+-   classe comum
+-   classe que pode ser instanciada como um objeto
+
+
+
+
+
+
+
+
+### Classe abstrata
+
+-   serve de modelo para uma classe concreta
+-   devem sempre ser herdadas
+-   podem conter métodos abstratos e/ou métodos concretos
+-   usa a palavra chave ***abstract*** para definir
+-   se declarar um construtor você deve chama-lo no filho com o super()
+
+
+
+
+
+
+
+
+### Método concreto
+
+-   método que possui lógica dentro
+
+
+
+
+
+
+
+
+### Método abstrato
+
+-   método que só pode ser setado em classes abstratas
+-   apenas os headers são declarados
+-   devem sempre ser implementados nos filhos
+-   não requerem a definição dos parâmetros
+-   utilizam a palavra chave ***abstract*** também
+
+
+
+
+
+
+
+
+### Constantes
+
+-   para declarar constantes basta setar as variáveis como ***static
+    final***
+
+
+
+
+
+
+
+
+### Interface
+
+-   Especificação explicitas de um conjunto de métodos e atributos que
+    devem ser implementados na classe que à implementa
+-   todos os métodos são abstratos
+-   não são permitidos métodos concretos
+-   é permitido que uma herança múltipla com intrfaces(classes não)
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="java"}
+interface C extends A,B {...
+class C implements A,B
+```
+
+-   ao setar os métodos você não coloca o ***abstract***
+-   aqui você declara apenas os headers dos métodos
+-   para os parâmetros você precisa coloca os nomes e os tipos
+-   para os atributos você pode setar valores, mas eles serão constantes
+-   para uma classe usar uma interface, ao invés do extends, você usa o
+    implements
+-   uma interface pode extender outra
+
+
+
+
+
+
+
+
+### Notas
+
+-   As classes podem usar o extends e o implements ao mesmo tempo
+
+

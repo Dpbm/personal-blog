@@ -1,0 +1,68 @@
+---
+title: Ciências da computação dia 75
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Nessa aula, começamos a ver maneiras melhores de manipular e organizar a
+memória do computador.
+
+Quando usamos o computador, raramente paramos para pensar como algo
+funciona, como é possível rodar diversos apps em um mesmo computador ao
+mesmo tempo.
+
+Essa capacidade se dá, pela maneira como a RAM é estruturada e pela a
+alocação dinâmica desta.
+
+
+
+
+
+
+
+
+Se pensarmos na RAM como um bloco único, dificilmente conseguiríamos
+rodar mais de uma aplicação.
+
+Isso pois, tudo ficaria bagunçado, e difícil de gerenciar.
+
+Contudo, a RAM possui uma estrutura em blocos, do qual, cada programa
+pega dois blocos de um tamanho padrão, por exemplo, e um deles é
+designado ao armazenamento de dados e o outro o programa em si.
+
+Mas e se o programa ou os dados excedem esse tamanho fixo?
+
+
+
+
+
+
+
+
+Graças aos ponteiros de memória, podemos fazer com que nosso programa
+aloque mais memória caso seja necessário. Fazendo o alocamento dinâmico,
+dessa forma, podemos pedir para o Sistema operacional alocar mais dois
+blocos, por exemplo.
+
+
+
+
+
+
+
+
+### Notas:
+
+int em C possui 4 bytes, em Python possui apenas um e caso necessário
+ele pega mais
+
+ponteiro → variável que armazena endereços de memória
+
+

@@ -1,0 +1,51 @@
+---
+title: Ciências da computação dia 69
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Bem, na última aula sobre circuitos digitais, vimos como montar desde um
+grafo dirigido até um circuito com flip-flop e portas lógicas. Contudo,
+falta ainda um detalhe.
+
+No último que montamos, utilizamos flip-flops do tipo JK e um flip-flop
+do tipo D para montarmos a saída. No entanto, podemos substituir todos
+os flip-flops JK por flip-flops do tipo D, teremos menos trabalho ao
+montar os mapas de Karnaugh (já que cada flip-flop D possui apenas uma
+entrada), mas possivelmente teremos que usar mais portas lógicas.
+
+Utilizando aquele mesmo exemplo, podemos passar disso:
+
+![antiga tabela](image_158.png)
+
+<figure>
+<img src="image_159.png"
+alt="nova tabela usando o flip-flop D, desta vez temos apenas duas colunas com os estímulos, chamados de D1 e D0, que são basicamente uma cópia das colunas do próximo estado" />
+<figcaption>nova tabela usando o flip-flop D</figcaption>
+</figure>
+
+<figure>
+<img src="image_160.png" alt="Mapa de Karnaugh D1" />
+<figcaption>Mapa de Karnaugh D1</figcaption>
+</figure>
+
+![Mapa de Karnaugh D0](image_161.png)
+
+<figure>
+<img src="image_162.png" alt="Mapa de Karnaugh da Saída" />
+<figcaption>Mapa de Karnaugh da Saída</figcaption>
+</figure>
+
+<figure>
+<img src="image_163.png" alt="circuito final" />
+<figcaption>circuito resultante</figcaption>
+</figure>
+
+

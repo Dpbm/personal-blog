@@ -1,0 +1,103 @@
+---
+title: Ciências da computação dia 258
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### IPs
+
+-   IANA → responsável por distribuir IPs
+-   existem 3 tipos de IPs não roteáveis → 10.0.0.0/8, 172.168.0.0/16 e
+    192.168.0.0/24. Todos os outros IPS são roteáveis (maquinas externas
+    ligadas a internet podem receber)
+-   8, 16, 24 são as mascaras de IP, elas dizem quais números são
+    estáticos. Dado que um IPv4 tem 32 bits, se dividirmos 32/4 = 8,
+    sendo assim cada parte equivale a 8 bits. Com isso, quando temos
+    IP/8, apenas o primeiro número é fixo, IP/16, os dois primeiros são
+    fixos e IP/24 os três primeiros são
+
+
+
+
+
+
+
+
+#### Dispositivos
+
+-   Você pode ter uma rede só com um switch, não necessariamente um
+    roteador
+-   Em Ethernet, quando tem muito trafego, a rede pode se atrapalhar com
+    a pilha de pacotes a serem entregues e acabar dando colisão
+-   Para um pacote passar é necessário que a rede esteja totalmente
+    livre
+-   Uma das maneiras de resolver a colisão é utilizar um delay para a
+    entrega de cada pacote (há um protocolo para isso)
+-   O hub enviar as informações para todos os dispositivos. Já o Switch,
+    com o uso ele descobre qual o ip de cada maquina e assimila elas a
+    cada porta, dessa forma, ao mandar algo para um IP especifico, ele
+    envia diretamente para aquela porta do switch que ele já conhece
+-   Cascateamento → interliga dois uma mais switches
+-   cabo crossover → uma ponta é diferente da outra. Geralmente
+    utilizada para ligar computadores diretamente
+-   Ao fazer o cascateamento, ambos os switches devem ter o mesmo
+    endereço de rede (como o 192.168.0.0). Se estiverem com endereços
+    diferentes, ao tentarem se comunicar, mesmo estando fisicamente
+    ligados a parte lógica não está. Para resolver isso, você pode
+    colocar um roteador no meio, e configurar o Gateway Padrão para os
+    switches, apontando para o roteador
+-   Roteadores são necessários configurações antes de usar, já o switch
+    já vem pronto
+-   Firewall pode ser para dispositivo ou para uma rede toda
+-   NAT → usando o IP da internet, há uma dispositivo que pega os
+    pacotes e redireciona de fora para uma maquina internet a rede.
+    Sendo assim usado para servidores (isso também é um firewall)
+
+
+
+
+
+
+
+
+#### Serviços
+
+-   IIS → serviços para WEB da Microsoft
+-   Quando você acessa algo .com.br, ele bate no DNS do registro.br e
+    retorna o IP do servidor da aplicação WEB
+-   VPN ponto a ponto → conecta dois ponto de forma barata e
+    criptografada
+-   VPN também é instalado em firewalls
+-   Há também VPN que age como um túnel para criptografar a comunicação
+    com a internet
+
+
+
+
+
+
+
+
+#### Proxy
+
+-   nasceu para interligar faculdades, exercitos, empresas, etc.
+-   é um meio que pega uma copia (cache) de algo que varias pessoas vão
+    acessar e ao invés do resto acessar na internet ele acessa do proxy
+    (economiza internet) → uso mais antigo, já que a internet hoje é
+    mais rápida e não é necessário esse tipo de cache
+-   usado também como um ACL(lista de controle de acesso) para bloquear
+    coisas que passam pela rede
+-   há também como configurar um proxy externo para pegar algo que está
+    sendo bloqueado na rede atual
+-   proxy reverso → você configura uma porta da sua aplicação dai alguém
+    de fora acessa em uma outra porta, mas quando vai trafegar para a
+    aplicação o proxy faz esse redirecionamento de portas
+
+

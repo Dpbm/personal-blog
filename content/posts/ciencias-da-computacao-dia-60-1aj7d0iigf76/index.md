@@ -1,0 +1,21 @@
+---
+title: Ciências da computação dia 60
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Um dos fatores que agrega muito para uma má comunicação dentro de
+empresas é o afastamento entre funcionários e chefe.
+
+Um chefe para acabar com isso, deve ser uma pessoa mais acessível, deve
+ser mais humano e se manter mais próximo de seus colaboradores, tentando
+sempre manter uma relação de igual para igual.
+
+

@@ -1,0 +1,33 @@
+---
+title: Ciências da computação dia 199
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+![image](image_330.png)
+
+Para interconectarmos dois registradores acumuladores de entrada
+serial/paralela, primeiro precisamos interconectar o barramento de
+entrada e saída e repartir parte dos dados para cada registrador. Dessa
+forma, conseguimos fazer com que a entrada paralela funcione
+adequadamente usando os dois registradores em conjunto.
+
+Já para a entrada serial, precisamos de uma lógica a mais. Para o shift
+left, começamos no registrador menos significativo (registrador 0), e
+então pegamos a saída mais significava dele e jogamos para o próximo
+registrador (nesse caso o registrador 1), ligando o na entrada de
+shift_left. Assim toda vez que ultimo dado for 1, esse dado será
+repassado para o próximo registrado e o ciclo poderá ser feito. Já no
+caso do shift_right, tomamos ações semelhantes, mas dessa vez pegamos do
+registrador mais significativo (registrador 1), e do valor menos
+significativo da saída dele, interligamos com o shift_right do próximo
+registrador.
+
+

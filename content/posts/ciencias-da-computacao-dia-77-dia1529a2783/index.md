@@ -1,0 +1,47 @@
+---
+title: Ciências da computação dia 77
+date: 2025-04-28
+tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+competência é ter:
+
+C --- conhecimento(saber)
+
+H --- habilidade (saber fazer)
+
+A --- atitude(querer fazer)
+
+V --- valor(moral,ética)
+
+E --- inteligência emocional
+
+#### ética
+
+-   normas universais de convivência
+-   acordos preestabelecidos pela sociedade
+
+#### moral
+
+-   individual
+-   definição interna de o que é certo e o que é errado
+
+amor para Plantão é o desejo por aquilo que você não possui
+
+amor para Aristóteles é amar aquilo que está ao seu redor, seus
+parentes, seus amigos, etc.
+
+Moral para Kant é o amor, e o amor para Kant é o Amor de Jesus Cristo, o
+amor pelo próximo, se doar pelo próximo independente de quem seja. Uma
+sociedade Utópica seguiria essa ideia.
+
+Numa empresa a moral requerida é a de Kant.
+
+
