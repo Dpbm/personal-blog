@@ -1,0 +1,44 @@
+---
+title: 1969-12-31
+date:  tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+O contador de programa guarda apenas o endereço do próximo comando;
+
+Quando você declara uma variável, o sistema reserva um espaço na memória
+(cada um desses espaços são registradores);
+
+A memória principal possui áreas: a primeira é a do sistema operacional,
+onde tudo que o sistema precisa deixar rodando de segundo plano estará
+lá, o segundo é a área de APPS, onde os programas em execução ficam
+guardados e por fim a área de dados, onde os dados de input e output de
+programas ficam guardados.
+
+Ciclo de busca de instruções:
+
+1.  A unidade de controle pega o endereço que está no contador de
+    programa e manda ele ir para o registrador de endereços da memória
+    principal;
+2.  endereço é encontrado na memória pelo decodificador de endereços;
+3.  valor é pego na memória e colocado no registrador de saída de dados
+    da memória principal;
+4.  valor é colocado no registrador de função.
+
+Ciclo de execução de instruções:
+
+1.  O comando que está no registrador de instruções é decodificado;
+2.  é feita uma busca dos operando na memória;
+3.  esses dados são passados para a ULA que processa e gera um
+    resultado;
+4.  o resultado é guardado na memória;
+5.  após isso será colocado no contador de programa o endereço do
+    próximo comando a ser executado.
+
+

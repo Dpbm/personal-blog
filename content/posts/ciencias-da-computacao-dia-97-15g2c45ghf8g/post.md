@@ -1,0 +1,16 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Quando há mais de uma classe em um arquivo .java, apenas 1 delas deve
+ser public e essa deve ter o mesmo nome do arquivo.
+
+

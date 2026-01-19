@@ -1,0 +1,57 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Grafos
+
+-   Conjunto de elementos de um grafo são as vertices (V = A, B, C, D)
+    e o conjunto de suas relações (E = A,C, B, D, C,B)
+
+![image](image_421.png)
+
+``` {code-block-mode="1" spellcheck="false" code-block-lang="lua"}
+//dot program
+graph{
+  beautify=true
+  layout="sfdp"
+
+  A [color=green]
+  B [color=red]
+  C [color=blue]
+  D [color=purple]
+
+  A -- C
+  B -- D 
+  C -- B
+}
+```
+
+#### Tipos de grafos
+
+-   dígrafo → grafo direcionado (com seta) (A,B é diferente de B,A,
+    sendo assim colocarei apenas aquele que será usado no conjunto), não
+    possui self loop (um vértice vai para ele mesmo)
+
+![[wikipedia](https://en.wikipedia.org/wiki/Directed_graph)](image_422.png)
+
+-   Grafo → grafo sem direção (aqui é necessário especificar tanto A,B
+    como B,A, não que não se sabe a direção, então ambas podem ser
+    percorridas)
+-   multi-grafo → há mais de um caminho entre vértices. Pode conter
+    self-loop
+
+![[wikipedia](https://pt.wikipedia.org/wiki/Multigrafo)](image_423.png)
+
+-   Grafo desconexo → há sub-grafos independentes
+
+![[unesp](https://www.ibilce.unesp.br/Home/Departamentos/MatematicaAplicada/socorro/aula2_camin_conexo.pdf)](image_424.png)
+
+

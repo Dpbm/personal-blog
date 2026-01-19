@@ -1,0 +1,170 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+**Complemento em decimal**
+
+obs: usar o complemento de um número é uma maneira de transformar uma
+subtração em uma soma
+
+745--84
+
+para transformar em um complemento pegue o maior numero da
+subtração(745) e conte o numero de dígitos(3), agora ache o maior com
+esse número de dígitos (999), agora vamos fazer o complemento de 9
+
+999--84 = 915
+
+agora some o maior numero da subtração com o complemento do número 84
+
+745 + 915 = 1660
+
+repare que esse numero 1 no resultado a gente irá descartar já que ele
+veio do carry quando você fez 7 + 9
+
+então o resultado dessa soma na real é 660, esse é o resultado parcial,
+agora para fazer o complemento de 10, você pega esse parcial e soma
+1(correção do resultado)
+
+660 + 1 = 661
+
+> Bom, em decimal isso é um pouco trabalhoso mas em binário isso tem uma
+> característica muito interessante
+
+> Obs esse algoritmo pode ser usado para qualquer base
+
+
+
+
+
+
+
+
+**complemento em binário**
+
+para fazer o complemento de 1 em binário é a mesma coisa do complemento
+de 9
+
+100010--10010
+
+pega o maior (100010) e pega o maior numero com o mesmo numero de
+bits(111111) agora faça
+
+111111+010010 =101101
+
+reparou uma coisa?
+
+101101 é a mesma coisa que inverter cada bit de 010010, por isso
+complemento é tão usado em binário, já que ao invés de você precisar
+ficar fazendo subtrações você só usa algoritmos ou circuitos de soma,
+dessa forma maquinas ficam mais baratas, já que ao invés de n somadores
+e n subtratores, agora você só precisa de n somadores
+
+bom, então, fazendo o complemento, pegue o menor número e inverta os
+bits (0 vira 1 e 1 vira 0, lembrando de preencher o inicio para o numero
+de cima ter o mesmo numero do d baixo)
+
+ou seja
+
+100010+101101
+
+resultando em
+
+001111 (lembrando de descartar o carry final) ← resultado parcial
+
+agora para fazer o complemento de dois pegue esse e some 1
+
+resultando em
+
+10000
+
+
+
+
+
+
+
+
+**Multiplicação em binário**
+
+a multiplicação funciona da mesma forma que em decimal, ou seja quando
+você multiplicar um numero por 0, tudo será 0 quando for por 1 o numero
+resultante será o mesmo
+
+**tabuada**
+
+0 \* 0 = 0
+
+0 \* 1 = 0
+
+1 \* 0 = 0
+
+1 \* 1 = 1
+
+> obs: essa tabela se assemelha a tabela verdade da porta AND
+
+
+
+
+
+
+
+
+### Códigos
+
+maneira de representar tudo que existe de uma certa forma que facilite a
+comunicação entre coisas
+
+**ASCII**
+
+tabela criada para padronizar os caracteres usados em diferentes
+sistemas, já que no começo da história da computação cada maquina tinha
+sua tabela de caracteres próprio o que dificultava a comunicação entre
+máquinas
+
+Então criou-se uma tabela com diferentes representações de caracteres
+que conhecemos em diferentes formatos como decimal, hexadecimal, html,
+octal, etc
+
+<figure>
+<img src="image_8.png" alt="tabela ascii" />
+<figcaption>fonte: Wikipedia</figcaption>
+</figure>
+
+**Códigos Ponderados**
+
+são códigos em que cada posição possui um certo valor (peso)
+
+binário é um código ponderado, já cada posição possui uma potência de 2
+
+
+
+
+
+
+
+
+**Observações**
+
+word = 4bits
+
+você pode criar qualquer código, desde que seja possível representar
+todos os decimais (0--9)
+
+códigos podem possuir duas ou mais maneiras de representar o mesmo
+digito, mas nunca dois dígitos podem possuir o mesmo código
+
+número de combinações em qualquer base = base\^n de dígitos
+
+para representar um número decimal você precisa de no mínimo 4 bits,
+pois 2⁴ = 16 e seu antecessor 2³ = 8 então com 4 bits você consegue
+representar os 10 números decimais
+
+

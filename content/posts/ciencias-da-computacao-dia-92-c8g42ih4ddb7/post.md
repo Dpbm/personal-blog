@@ -1,0 +1,156 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+> POO possui foco nos dados (objetos) do sistema, não em suas funções!
+
+### Classes
+
+-   Métodos e atributos que o objeto terá;
+-   Determina o tipo do objeto;
+-   Pode ser instanciado N vezes.
+
+
+
+
+
+
+
+
+### Objeto
+
+-   Uma instância de uma classe;
+-   Possui os métodos e atributos da classe encapsulado dentro dele;
+-   Armazena um endereço de onde ele foi instanciado.
+
+
+
+
+
+
+
+
+### Método
+
+-   Funções dentro da classe que manipulam os atributos.
+
+
+
+
+
+
+
+
+### Atributos
+
+-   Dados pertencentes à uma classe;
+
+
+
+
+
+
+
+
+### Método construtor
+
+-   Função que é executada assim que o objeto é instanciado;
+-   Em java essa função tem o mesmo nome da classe, ele também não
+    possui tipo e no geral é public;
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="java"}
+public class Example{
+  public Example(){ //construtor
+```
+
+
+
+
+
+
+
+
+### Encapsulamento
+
+-   visa esconder detalhes de implementação;
+-   objeto deve possui uma parte privada que só pode ser acessado
+    internamente na classe;
+-   a parte privada, só pode ser acessada por métodos públicos
+    (interface) que trata a entrada antes;
+-   atributos, no geral, devem ser private;
+-   fazendo isso o objeto só se comporta de uma certa maneira, já
+    pensada.
+
+
+
+
+
+
+
+
+### Sobrecarga de métodos
+
+-   uso de múltiplos métodos com o mesmo nome;
+-   isso é possível desde que possuam argumentos diferentes;
+-   se uma classe possui tipos diferentes, mesmo nome, mas argumentos
+    diferentes, isso retorna um erro;
+-   Você pode ter outras funções com o nome da classe além do método
+    construtor, basta você atribuir um tipo à função que assim ela não
+    será mais considerada método construtor;
+-   Se você tiver o constructor e outra função com o nome da classe,
+    isso não se encaixa em sobrecarga de métodos.
+
+
+
+
+
+
+
+
+Quando você não adiciona public, private ou protected, o elemento é
+considerado "default" em java.
+
+O default possui um comportamento um pouco mais restritivo perante o
+public.
+
+o private é mais restritivo, apenas dentro da classe ele pode ser usado.
+
+o protected faz com que algo seja visto apenas dentro do mesmo package e
+subclasses.
+
+private e protected, geralmente, não são usados em constructors.
+
+
+
+
+
+
+
+
+se você tiver fazendo uma função para sua classe, e o parâmetro possui o
+mesmo nome de um atributo, se você fizer
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="java"}
+public void test(int a){
+  a = a;
+}
+```
+
+a variável que o java se referirá é a "mais próxima", ou seja a variável
+local. Para fazer da maneira correta use o this
+
+``` {code-block-mode="2" spellcheck="false" code-block-lang="java"}
+public void test(int a){
+  this.a = a;
+}
+```
+
+

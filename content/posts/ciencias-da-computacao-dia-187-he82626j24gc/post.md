@@ -1,0 +1,40 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Generalização dos limites fundamentais
+
+![image](image_303.png)
+
+
+
+
+
+
+
+
+#### Continuidade
+
+-   funções deriváveis
+-   uma função pode no geral não ser continua, mas em algum pode ela
+    pode ser
+
+![função continua em a](image_304.png)
+
+![algumas funções não continuas](image_305.png)
+
+-   você até pode simplificar a função original, mas sempre pense se
+    isso não implicará em mudanças no domínio
+-   existem casos onde a função é definida em sf(a), mas em f(a) não
+
+![image](image_306.png)
+
+

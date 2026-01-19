@@ -1,0 +1,38 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Tabela de Análise
+
+Dada uma gramatica, é analisado o conjunto First e Follow de cada regra
+
+![image](image_358.png)
+
+Após isso, podemos utilizar esses símbolos de First e Follow para
+descrever qual a próxima regra quando encontrar certo token na sequência
+de entrada
+
+![image](image_359.png)
+
+Nessa tabela, adicionamos todas as regras de baseando-se nos caracteres
+de First, contudo ao encontrar ε, é necessário preencher todas os
+símbolos de Follow com *simbolo → ε*
+
+Com isso, podemos testar entradas e verificar se estão ou não dentro da
+gramática
+
+![image](image_360.png)
+
+dessa forma, utilizamos a estrutura de pilha, e vamos expandindo os
+símbolos não terminais e casando os tokens. Se e a entrada terminarem
+com \$, então a entrada é válida.
+
+

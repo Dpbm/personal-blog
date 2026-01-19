@@ -1,0 +1,19 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+-   Topologia Token Ring → proprietário da IBM
+-   cabos vão de 17 a 100m, nem mais nem menos, pela norma
+-   passou de 100m o cabo de par trançado pode perder suas propriedades
+-   IPV4 → 32 bits
+-   IPV6 → 128 bits
+
+

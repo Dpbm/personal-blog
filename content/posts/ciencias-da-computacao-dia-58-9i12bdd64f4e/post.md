@@ -1,0 +1,52 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Na última aula de sistemas digitais, começamos a ver como os circuitos
+de memórias são construidos.
+
+De maneira básica, os circuitos de memória são constituídos por
+flip-flops. Esses circuitos em sua forma mais padrão e básica são
+construídos com duas portas NAND com uma saída interligada em uma das
+entradas do outro.
+
+<figure>
+<img src="image_130.png"
+alt="flip-flop RS, duas portas NAND e duas portas NOT na entrada" />
+<figcaption>Flip-flop RS — filipeflop</figcaption>
+</figure>
+
+Neste modelo de flip-flop temos duas entradas, set e reset, ao adicionar
+1 no set, o valor 1 será salvo no Q e o valor 0 no \~Q e ao adicionar 0
+o inverso acontece. Contudo ao adicionar 1 ao reset, a saída Q se
+transformará automaticamente em 0, resetando/limpando a saída.
+
+Este é o modelo de flip-flop mais simples, mas existem outros com
+diversas peculiaridades e outros usos, como o JK, D, T, RS com clock,
+etc.
+
+Os flip-flops são usados amplamente em nossos computadores. Na memória
+principal, por exemplo, cada registrador possui uma certa quantidade de
+flip-flops condizente com a arquitetura que você está utilizando. Sendo
+assim, se seu computador for de 64bits cada registrador possui 64
+flip-flops, cada um armazenando 1 bit.
+
+Neste exemplo simples que mostrei,o circuito continha apenas duas
+entradas, no entanto o convencional é pelo menos 3 entradas, das quais
+uma delas é a entrada para o clock. O clock diz para o flip-flop em que
+momento ele pode executar um set ou reset, agindo com uma espécie de
+trava ou ainda um agente de controle. Com o clock o circuito apenas fará
+a operação nas mudanças de 0 para 1 e de 1 para 0, conhecidos como borda
+de subida e borda de descida respectivamente, sendo assim no momento em
+que o clock estiver indo de 0V para 5V, por exemplo, o flip-flop
+executará a operação, o inverso também pode acontecer.
+
+

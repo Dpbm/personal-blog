@@ -1,0 +1,23 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### pontos de função
+
+-   com base no tamanho da entrada e saída de uma função, qual a
+    pontuação dela
+-   estimativa
+
+#### esforço
+
+-   quantidade de pessoas para fazer o software
+
+

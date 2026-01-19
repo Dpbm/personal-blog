@@ -1,0 +1,74 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+No último dia da matéria de geometria analítica e algebra linear, vimos
+algumas técnicas para resolver sistemas.
+
+A primeira mostrada foi a regra de escalonamento, usando esse nome pode
+parecer algo muito diferente, mas na verdade isso já foi visto no começo
+do curso em pré-calculo com o nome de eliminação de gauss. Como esse
+tema já foi abordado, não vou repeti-lo aqui, caso você tenha vontade de
+aprender sobre ele clique
+[aqui](https://medium.com/@dpbm/ci%C3%AAncias-da-computa%C3%A7%C3%A3o-dia-46-4b8254ad510b).
+
+
+
+
+
+
+
+
+### Regra de Crammer
+
+A Regra de Crammer é aplicável para sistemas com no máximo duas
+incógnitas.
+
+Para utiliza-lo faça o seguinte:
+
+x+2y = 5
+
+2x --- 3y = -4
+
+faça o determinante de A, tal que seus elementos sejam os termos que
+acompanham as incógnitas
+
+``` {code-block-mode="0" spellcheck="false"}
+A = | 1  2 |  = -7
+    | 2 -3 |
+```
+
+depois, para encontrar Ax troque a primeira coluna pelos termos
+independentes (os resultados das equações)
+
+``` {code-block-mode="0" spellcheck="false"}
+Ax = | 5    2 | = -7
+     | -4  -3 |
+```
+
+e por fim, para Ay, troque a segunda coluna pelos termos independentes
+
+``` {code-block-mode="0" spellcheck="false"}
+Ay = | 1   5 | = -14
+     | 2  -4 |
+```
+
+agora, para encontrar o valor de X faça
+
+x = Ax / A = 1
+
+e para encontrar Y faça
+
+y = Ay / A = 2
+
+pronto, encontramos os valores de X e Y que satisfazem o sistema linear
+
+

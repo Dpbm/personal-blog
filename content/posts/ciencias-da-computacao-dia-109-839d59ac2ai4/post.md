@@ -1,0 +1,101 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Para entender as ameaças/oportunidades perante seus concorrentes, você
+deve entende-los, comprando seus produtos, vendo seu atendimento, vendo
+o site, etc.
+
+
+
+
+
+
+
+
+### 5 forças de Michael Porter
+
+Forças que exercem pressão sobre a empresa (olha só para o micro e o
+macro, não para dentro da empresa)
+
+#### 1 --- Concorrentes diretos
+
+-   Entenda tudo sobre eles;
+-   Observe empresas que atuam no mesmo segmento;
+-   Faça comparações por linha de produto.
+
+### 2 --- Fornecedores
+
+-   Ver se os fornecedores te ajudam a ser competitivo;
+-   conseguir um preço melhor ou uma qualidade melhor, dependendo do
+    segmento.
+
+### 3 --- Clientes
+
+-   Ver se seus clientes vão para sua empresa ao invés do concorrente.
+
+### 4 --- Produtos substitutos
+
+-   produtos, não necessariamente do mesmo segmento que o seu, mas que
+    podem te substituir;
+-   mercado muito saturado, geralmente, faz os consumidores irem para
+    outros produtos.
+
+### 5 --- Estudar novos entrantes
+
+-   Ficar de olho nos novos concorrentes.
+
+
+
+
+
+
+
+
+#### B2B → business to business
+
+#### B2C → business to costumer
+
+
+
+
+
+
+
+
+### Pesquisa de mercado (ou pesquisa de marketing)
+
+-   formulários (geralmente) que são usados para entender seus
+    consumidores/mercado, o que eles precisam, seus hábitos, gostos,
+    etc.
+
+
+
+
+
+
+
+
+### Etapas para fazer a pesquisa de mercado
+
+1 --- definir os problemas, alternativas e os objetivos da pesquisa;
+
+2 --- desenvolvimento do plano de pesquisa;
+
+3 --- coleta de informações;
+
+4 --- analise das informações;
+
+5 --- apresentação dos resultados;
+
+6 --- tomada de decisão.
+
+

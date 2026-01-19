@@ -1,0 +1,16 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Linguagem C pode ser considerada de médio nível. Já que consegue
+conversar com o hardware e ainda ser fácil de ler.
+
+

@@ -1,0 +1,33 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Micro-serviço
+
+-   mais fácil de escalar
+-   mais custoso para infra
+-   API comunica a aplicação com os micro-serviços
+-   micro-serviço não se importa com a aplicação em si, eles
+    simplesmente fazem a tarefa e retornam algo, dai a aplicação se
+    encarrega de como lidar com ela. Fazendo assim com que seja possível
+    reutilizar os micro-serviços em outras aplicações
+-   Não possui Views
+-   com base nas finalidades do projeto, é constituído um padrão para
+    essas APIs
+-   pode have uma camada para padronização de dados usando os DTOs
+    (camada DTL)
+-   usa chamadas HTTP
+
+![tabela de chamadas http](image_377.png)
+
+![arquitetura básica do micro-serviço](image_378.png)
+
+

@@ -1,0 +1,91 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Include
+
+![image](image_195.png)
+
+Ao executar o caso A o caso B, necessariamente, é executado.
+
+
+
+
+
+
+
+
+### Extend
+
+![image](image_196.png)
+
+Ao executar o caso A você pode, ou não, executar o caso B
+
+
+
+
+
+
+
+
+### Generalização
+
+![image](image_197.png)
+
+Vendedor e secretaria fazem tudo que um funcionário faz
+
+
+
+
+
+
+
+
+### Fronteiras
+
+![image](image_198.png)
+
+o retângulo define as fronteiras do sistema (só o que o sistema faz).
+
+
+
+
+
+
+
+
+### Comunicação
+
+![image](image_199.png)
+
+define a comunicação entre as partes.
+
+
+
+
+
+
+
+
+### Ator(outra notação)
+
+![image](image_200.png)
+
+
+
+
+
+
+
+
+Nota: Um bom diagrama mostra as fronteiras e como o sistema é usado.
+
+

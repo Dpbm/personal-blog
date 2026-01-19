@@ -1,0 +1,181 @@
+---
+title: UV
+date: TLS tags: ["computer science"]
+draft: false
+---
+Recently, I've been working on a python project that required me to use the `qiskit-ibm-runtime` package to 
+do some quantum stuff.
+
+So, the first thing I did was run:
+
+```bash
+uv add python-dotenv qiskit-ibm-runtime
+```
+
+then I created a simple snippet to test it: 
+
+```python
+import os                                            
+                                                     
+from dotenv import load_dotenv                       
+                                                     
+from qiskit_ibm_runtime import QiskitRuntimeService  
+                                                     
+if __name__ == "__main__":                           
+    load_dotenv()                                    
+                                                     
+    QiskitRuntimeService.save_account(channel="ibm_quantum_platform", token=os.getenv("IBM_KEY"), instance=os.getenv("CRN"), overwrite=True, set_as_default=True)                             │                                                                                              
+    service = QiskitRuntimeService()                                                                                                                                               
+                                                                                                                                                                                   
+    print(service.least_busy(filters= lambda b : not b.simulator and b.num_qubits >= 9))
+```
+
+and ran the script with:
+
+```bash
+uv run python script.py
+```
+
+Everything seemed correctly, till I saw the following error:
+
+```
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)
+
+The connection failed because the SSL certificate is not valid. To use a self-signed certificate, disable verification of the server's SSL certificate by invoking the set_disable_ssl_verification(True) on your service instance and/ or use the disable_ssl_verification option of the authenticator.
+
+qiskit_ibm_runtime.accounts.exceptions.InvalidAccountError: 'Unable to retrieve instances. Please check that you are using a valid API token.'
+```
+
+---
+
+## Debugging
+
+At first glance, it seemed like a problem with my account/tokens. So I cleaned everything, created new instances and API Keys and tested again, but no success.
+Then, I read the `uv` documentation for `tls` at [https://docs.astral.sh/uv/concepts/authentication/certificates/](https://docs.astral.sh/uv/concepts/authentication/certificates/). I added the `--native-tls` flag and tested `SSL_CERT_FILE`, but nothing.
+
+I asked gpt, searched on stackoverflow/google/github, updated certifi:
+
+```bash
+pip install --upgrade certifi
+```
+
+And nothing.
+
+So I decided to check the underlying package. I downloaded the source code from github and used the python debugger from vscode to debug line-by-line.
+
+```bash
+# preparing the environment to debug qiskit-ibm-runtime
+
+python -m venv ./test-ibm-runtime
+source ./test-ibm-runtime/bin/activate
+
+git clone https://github.com/Qiskit/qiskit-ibm-runtime.git
+cd ./qiskit-ibm-runtime
+pip install .
+
+# ... copied my snippet and .env here
+pip install python-dotenv
+code .
+```
+
+To debug that, I modified a little bit my code: 
+
+```python
+import os                                                                                    
+                                                                                             
+from dotenv import load_dotenv                                                               
+                                                                                             
+from qiskit_ibm_runtime import QiskitRuntimeService                                          
+                                                                                             
+if __name__ == "__main__":                                                                   
+    load_dotenv()                                                                            
+    QiskitRuntimeService.save_account(channel="ibm_quantum_platform", token=os.getenv("IBM_KEY"), instance=os.getenv("CRN"), overwrite=True, set_as_default=True, verify=False)
+    service = QiskitRuntimeService(instance=os.getenv("CRN"))                                                                                                                                               
+    print(service.least_busy(filters= lambda b : not b.simulator and b.num_qubits >= 9)) 
+```
+
+Using `verify=False` tells the Runtime Service to ignore TLS/SSL, so maybe It would help me for this case. The other change I did (added `instance=os.getenv("CRN")` for runtime instantiation) came from the stacktrace that pointed to internal checks of the instance value
+
+```python
+if self._account.instance not in [inst["crn"] for inst in self.instances()]:
+
+self._all_instances = self._account.list_instances()
+```
+
+After my debugging session, something interesting happened, it worked. So I reverted my modifications, and it worked again. So I was sure that the problem was with my environment.
+I came back to my project, verified if the package matched the version with the one I've just debbuged, and it did. So, the only possible reason at that moment was the `TLS + uv` combination.
+
+I first updated the certificates:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install --reinstall ca-certificates
+sudo update-ca-certificates
+```
+
+And then asked Perplexity this time.
+
+```
+# I:
+
+I'm having SSL issues while using an uv environment, how can I solve that?
+```
+
+
+```
+# Perplexity: 
+
+The primary way to resolve SSL issues with your UV environment is to ensure that uv uses your system's trusted certificate store. You can do this by running uv with the --native-tls flag or setting the environment variable UV_NATIVE_TLS to true, which makes uv respect the system's SSL certificates.
+
+Another common cause of SSL errors is when uv cannot find or access the correct certificate files, especially in certain environments like behind corporate proxies or using specific operating systems. For instance, on NixOS, you may need to add the certificate bundle path to your configuration file to fix certificate verification errors permanently.
+
+In some cases, you can bypass SSL verification temporarily by setting the SSL_CERT_FILE environment variable to point to a valid CA bundle, such as /etc/ssl/certs/ca-bundle.crt on NixOS or your system's default path, but be cautious as this disables SSL verification for the process.
+
+If SSL issues persist, reviewing and updating your environment's trust store, or explicitly configuring uv to use system TLS, are the most reliable approaches to fix these errors.​
+```
+
+```
+# I:
+
+I Used both, but I still got the message: (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))
+```
+
+```
+# Perplexity:
+
+If you're still seeing the "unable to get local issuer certificate" error after using --native-tls or setting UV_NATIVE_TLS, the issue may be that your environment is missing the correct CA certificates or your system's certificate store isn't being properly accessed by uv or Python itself.​
+
+One common fix is to install or update the certifi package, which provides a curated set of trusted root certificates for Python applications:
+
+pip install --upgrade certifi
+
+If this doesn't resolve the issue, you may need to manually point your environment to a valid CA bundle. Set the REQUESTS_CA_BUNDLE or SSL_CERT_FILE environment variable to the path of your system's CA bundle (such as /etc/ssl/certs/ca-certificates.crt on most Linux systems, or the cacert.pem file in your Python environment).
+
+Additionally, if you're behind a corporate proxy, the proxy may be replacing the certificate chain. In this case, you may need to add your organization's root certificate to your CA bundle, or use a custom certificate bundle for your Python environment.
+
+If none of these solutions work, ensure your system's date and time are correct, as SSL verification can fail if the system clock is off. Also, check if your environment is using a self-signed or untrusted certificate, which may require explicitly trusting it or using a trusted certificate authority.
+```
+
+Look at that!!! It just gave me what I needed, `REQUESTS_CA_BUNDLE` was the missing piece to fix this issue. I ran the command:
+
+```bash
+REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt uv --native-tls run python original_script.py
+```
+
+And it worked!!! finally!!!
+
+
+## Final Thoughts
+
+I don't know you, but it always seems exciting to debug things, and it's even better now days with LLMS.
+
+I'm not very into LLMS, but I can't disagree that they are very useful sometimes. 
+
+In general, I use a combination of `chatgpt` + `gemini` + `perplexity` and it fits my necessities really well.
+
+I always think about using an AI based IDE, like `cursor` and `windsurf`, but I still using `neovim` and `vscode` (sometimes a JetBrains IDE too).
+
+As a developer, I'm not really concerned about what tool I'm using, but if I'm reaching my goals.
+
+But actually, whatever. I hope this article has helped you someway :)

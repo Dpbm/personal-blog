@@ -1,0 +1,78 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### estudo de viabilidade
+
+-   verifica se um sistema vale a pena ser feito/implantado, ajudando na
+    tomada de decisão e, se houver, apresenta outras soluções.
+
+#### o que é analisado:
+
+-   Como a empresa funciona: como opera, quem são os usuários, quais são
+    as políticas, etc.
+-   Problema com o sistema apresentado: ver como o sistema atual
+    funciona e o que pode ser melhorado nele.
+-   Objetivos e outros requisitos: requisitos novos para o sistema.
+-   Restrições: requisitos não funcionais que delimitam o sistema.
+-   Alternativas possíveis: outros sistema que podem anteder o problema
+    (o próprio sistema atual pode se encaixar nisso).
+-   Vantagens e Desvantagens das alternativas.
+
+#### questões que podem ser feitas:
+
+-   O que acontece se o sistema não for implementado?
+-   Quais os problemas atuais?
+-   É necessário novas tecnologias/habilidades?
+
+#### estrutura PLECES:
+
+-   Performance: tempo de resposta adequado.
+-   Informação: sistema gera informações úteis.
+-   Economia: sistema, economicamente, vale a pena.
+-   Controle: Controle de segurança.
+-   Eficiência: sistema usa de todos os recursos disponíveis.
+-   Serviços: sistema é flexível e confiável.
+
+#### Tipos de viabilidade:
+
+-   econômica: o quanto custará e o quanto dará de retorno.
+-   operacional: a tecnologia apresenta alguma barreira ao usuário.
+-   técnica: há tecnologias para implementar o sistema.
+
+#### Tipos de custos:
+
+-   de desenvolvimento: pessoas, software, hardware, instalação do
+    sistema, treinamento, etc.
+-   operacionais(contínuos): manutenção, salários, etc.
+-   fixo: aluguel, salários, luz, etc.
+-   variável: servidores, manutenção, serviço de terceiros, etc.
+
+#### Tipos de benefícios:
+
+-   tangíveis: os quais você consegue ver os valores, como aumento de
+    produção e redução de despesas.
+-   intangíveis: os quais você não consegue medir diretamente, como
+    satisfação do cliente, melhor gestão, etc.
+
+#### técnicas para análises de custo x benefício:
+
+-   Payback: se e em quanto tempo haverá o retorno financeiro, baseando
+    a análise se é melhor investir o dinheiro em renda fixa ou no
+    projeto.
+-   valor líquido atual: subtrai os benefícios dos custos atuais, se for
+    negativo haverá prejuízo.
+-   ROI (Análise de retorno dos investimentos): semelhante ao VLA, mas
+    dessa vez pensa no investimento inicial e diz qual dá mais retorno.
+-   matriz da análise de viabilidade: maneira de comparar todos as
+    técnicas acima usando uma matriz.
+
+

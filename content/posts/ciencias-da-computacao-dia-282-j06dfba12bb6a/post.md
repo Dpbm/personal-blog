@@ -1,0 +1,32 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Socket
+
+-   comunicação usando TCP/UDP
+-   troca de dados em tempo real
+-   escalável
+-   multi-usuário
+-   mais difícil de implantar
+-   mais vulnerável
+-   resposta rápida
+-   modelo cliente servidor
+-   ocorre um three-way handshake no começo
+
+![[geeksforgeeks](https://www.geeksforgeeks.org/socket-in-computer-network/)](image_467.png)
+
+-   fluxo é bidirecional, ambos os lados podem tanto enviar como receber
+    ao mesmo tempo, basta escolher qual operação realizar
+-   Server espera por múltiplas conexões, cada uma é um novo socket
+-   server usa várias threads para os sockets
+
+

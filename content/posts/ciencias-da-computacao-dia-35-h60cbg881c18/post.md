@@ -1,0 +1,23 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+algoritmos lineares →algoritmos que mexem com arrays(listas)
+
+matrizes → uma lista com várias listas dentro
+
+caso você crie uma matriz ainda assim na memória do computador serão
+dados lineares
+
+em Python quando você trabalha com listas, uma lista nada mais é do que
+um ponteiro na memória, como se você usa-se um malloc em c
+
+

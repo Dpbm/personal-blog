@@ -1,0 +1,30 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+#### Autômato de pilha
+
+-   Quando há a necessidade de contar
+-   segue a ideia de um valor fazer empilhar e outro faz desempilhar
+-   geralmente começa com uma marca (por exemplo #)
+-   Toda palavra começa com ε(vazio) e termina com ε
+-   Se você tentar desempilhar e o valor não estiver no topo da pilha
+    haverá um erro (programa termina, palavra não é aceita)
+-   transições seguem o seguinte padrão → (lê o valor, desempilha o
+    valor -\> empilha o valor), por exemplo (x, ε -\> 1), poderíamos
+    entender que ele vai ler da palavra de entrada o valor x, e se for x
+    ele vai desempilhar nenhum valor e empilhar o valor 1
+
+![image](image_283.png)
+
+nesse exemplo estou usando ep representando ε.
+
+

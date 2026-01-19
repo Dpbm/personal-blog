@@ -1,0 +1,21 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+bubble sort → você compara valores de dois em dois, deixando a esquerda
+os menores e a direita os maiores, você deve rodar esse algoritmo até
+que não exista nenhuma troca a ser feita em toda a lista.
+
+select sort → percorre o array uma vez, pega o menor e joga no começo,
+depois faz o menos com o próximo menor e joga em segundo lugar, e assim
+sucessivamente
+
+

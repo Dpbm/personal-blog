@@ -1,0 +1,17 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+Podemos utilizar uma versão da linked list, de forma que guardaremos em
+uma variável o endereço do último node. Isso pode ser usado para reduzir
+o tempo de acesso para alguns algoritmos.
+
+

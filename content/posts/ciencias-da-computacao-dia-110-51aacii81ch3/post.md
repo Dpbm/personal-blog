@@ -1,0 +1,18 @@
+---
+title: Ciências
+date: da tags: ["computer science"]
+draft: false
+---
+
+
+
+
+
+
+
+### Lista duplamente encadeada
+
+-   dois pointer para o próximo nó e o anterior;
+-   ajuda na performance e na facilidade em encontrar valores na lista.
+
+
