@@ -3,6 +3,14 @@ languageCode = 'en-us'
 title = 'DPBM Blog'
 theme = "shibui"
 
+[services]
+  [services.googleAnalytics]
+    id = 'G-Q12P7E4HC9'
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
 
 [params]
 	[params.author]
