@@ -44,7 +44,6 @@ At first I messed with nullclaw, but it seemed to me too much experimental and h
 
 This research can also be found at: https://github.com/Dpbm/qiskit-personal-assistant/blob/main/research.md
 
-```
 ## NOTES
 
 - `SKILL.md` provide a way to create a path for allowing the openclaw to execute some commands as you need, bypassing the plan of usage.
