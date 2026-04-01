@@ -1,4 +1,5 @@
-baseURL = 'https://dpbmdev.com/'
+#baseURL = 'https://dpbmdev.com/'
+baseURL = 'https://personal-website-phi-seven-36.vercel.app/'
 languageCode = 'en-us'
 title = 'DPBM Blog'
 theme = "shibui"
