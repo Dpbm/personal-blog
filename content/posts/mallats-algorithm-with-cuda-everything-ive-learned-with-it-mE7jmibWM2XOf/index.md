@@ -280,6 +280,25 @@ int main() {
 
 I ensured to use `extern "C" {}` to make it easier to debug using cuda-gdb later.
 
+### Compute capability
+
+If you don't have enough money to buy newer GPUs, you'll probably face some issues like me.
+
+I have a GTX 1060 6Gb, which is pretty old for now days standards. So a lot of features are not available for me.
+
+So sometimes I faced problems while compiling the code, because the usage of of wrong cuda sdk versions, drivers, gcc, etc.
+
+So take a look at your board compatibilities before doing that.
+
+
+### Cuda 12.9
+
+Another issue I had was trying to run some versions of cuda. 
+
+There were a problem with a library header that wasn't setting functions to `noexcept(true)`, so I had to add it manually.
+
+Take a look at: [https://forums.developer.nvidia.com/t/error-exception-specification-is-incompatible-for-cospi-sinpi-cospif-sinpif-with-glibc-2-41/323591](https://forums.developer.nvidia.com/t/error-exception-specification-is-incompatible-for-cospi-sinpi-cospif-sinpif-with-glibc-2-41/323591)
+
 
 ### Building
 
