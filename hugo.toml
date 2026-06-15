@@ -14,6 +14,7 @@ theme = "shibui"
     respectDoNotTrack = true
 
 [params]
+  math = true
 	[params.author]
 	  name = "Dpbm"
 	  email = "dpbm136@gmail.com"
@@ -21,4 +22,10 @@ theme = "shibui"
    [markup.goldmark]
       [markup.goldmark.renderer]
          unsafe = true
+      [markup.goldmark.extensions]
+          [markup.goldmark.extensions.passthrough]
+            enable = true
+            [markup.goldmark.extensions.passthrough.delimiters]
+              block = [['$$', '$$']]
+              inline = [['$', '$']]
 
