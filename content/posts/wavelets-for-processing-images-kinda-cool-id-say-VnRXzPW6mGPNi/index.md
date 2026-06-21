@@ -48,7 +48,7 @@ After my last class on wavelets, we learned about 2D-DWT. This is one is basical
 This one is even simpler if we think of it as basically matrix multiplication. 
 
 
-The overall calculation can be done as: $Y[\cdot][\cdot] = m[\cdot][\cdot](s[\cdot][\cdot] * m[\cdot][\cdot]^{T}$, where $m$ is the filter matrix as we have done in DTWT, $s$ is the signal and $Y$ the resulting matrix. To finally get the processed image, we need to rearrange the elements in the $Y[\cdot][\cdot]$ matrix, such that the first quadrant has all values from `even rows and even columns`, the second from `even rows odd columns`, the third from `odd rows even columns` and the last one from `odd rows and odd columns`.
+The overall calculation can be done as: $Y[\cdot][\cdot] = m[\cdot][\cdot](s[\cdot][\cdot] * m[\cdot][\cdot]^{T})$, where $m$ is the filter matrix as we have done in DTWT, $s$ is the signal and $Y$ the resulting matrix. To finally get the processed image, we need to rearrange the elements in the $Y[\cdot][\cdot]$ matrix, such that the first quadrant has all values from `even rows and even columns`, the second from `even rows odd columns`, the third from `odd rows even columns` and the last one from `odd rows and odd columns`.
 
 The most interesting part, is that each quadrant represent a thing. So the first one is the image with less noise and reduced in size, the second and third are borders and the last one the noise itself.
 
