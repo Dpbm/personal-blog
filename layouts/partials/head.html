@@ -65,3 +65,6 @@ Articles */}} {{ if .IsPage }}
 {{ end }} {{ partialCached
 "head/css.html" . }}
 {{ partial "google_analytics.html" . }}
+{{ with .OutputFormats.Get "rss" }}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}

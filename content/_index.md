@@ -33,4 +33,19 @@ If you find anything interesting here, take a look at my socials:
     <a href="https://www.linkedin.com/in/alexandre-silva-a22383271/">
         <img src="/images/linkedin.svg" />
     </a>
+    <a href="https://bsky.app/profile/dpbm.bsky.social"> 
+        <img src="/images/bluesky.svg" />
+    </a>
+    <a href="https://orcid.org/0009-0008-9134-5974"> 
+        <img src="/images/orcid.svg" />
+    </a>
+    <a href="https://www.youtube.com/@iamdpbm"> 
+        <img src="/images/youtube.svg" />
+    </a>
+    <a href="https://www.tiktok.com/@iamdpbm"> 
+        <img src="/images/tiktok.svg" />
+    </a>
+    <a href="/index.xml"> 
+        <img src="/images/rss.svg" />
+    </a>
 {{< /socials >}}

@@ -3,6 +3,14 @@ baseURL = 'https://personal-website-phi-seven-36.vercel.app/'
 languageCode = 'en-us'
 title = 'DPBM Blog'
 theme = "shibui"
+copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
+
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
 
 [services]
   [services.googleAnalytics]
