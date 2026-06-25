@@ -2,12 +2,13 @@
 baseURL = 'https://personal-website-phi-seven-36.vercel.app/'
 languageCode = 'en-us'
 title = 'DPBM Blog'
-theme = "shibui"
+theme = "PaperMod"
+
 copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
 
 
 [outputs]
-  home = ['html', 'rss']
+  home = ['html', 'rss', 'json']
   section = ['html', 'rss']
   taxonomy = ['html']
   term = ['html']
@@ -23,7 +24,66 @@ copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
 
 [params]
   math = true
-	[params.author]
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  comments = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowToc = true
+   [params.analytics]
+    [params.analytics.google]
+        SiteVerificationTag = 'G-Q12P7E4HC9'
+
+   [params.homeInfoParams]
+      Title = "Welcome to Dpbm's knowledge backup!"
+      Content = "This is my personal website. Here You will find many different things across many different fields (in general computer science). I love to share interesting things about things I'm working on! I Hope you enjoy reading it😉"
+
+   [[params.socialIcons]]
+      name = "Github"
+      url = "https://github.com/Dpbm/"
+   
+   [[params.socialIcons]]
+      name = "Bluesky"
+      url = "https://bsky.app/profile/dpbm.bsky.social"
+   
+   [[params.socialIcons]]
+      name = "X"
+      url = "https://x.com/dpbmdev"
+    
+   [[params.socialIcons]]
+      name = "Linkedin"
+      url = "https://www.linkedin.com/in/alexandre-silva-a22383271/"
+    
+   [[params.socialIcons]]
+      name = "OrcID"
+      url = "https://orcid.org/0009-0008-9134-5974"
+   
+   [[params.socialIcons]]
+      name = "Lattes"
+      url = "https://lattes.cnpq.br/4483820337578044"
+
+   [[params.socialIcons]]
+      name = "Youtube"
+      url = "https://www.youtube.com/@iamdpbm"
+   
+    [[params.socialIcons]]
+      name = "TikTok"
+      url = "https://www.tiktok.com/@iamdpbm"
+
+    [[params.socialIcons]]
+      name = "KoFi"
+      url = "https://ko-fi.com/dpbm697261"
+    
+    [[params.socialIcons]]
+      name = "RSS"
+      url = "/index.xml"
+
+
+   [params.cover]
+      responsiveImages = false
+      linkFullImages = true
+   [params.author]
 	  name = "Dpbm"
 	  email = "dpbm136@gmail.com"
 [markup]
