@@ -48,10 +48,6 @@ copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
       url = "https://bsky.app/profile/dpbm.bsky.social"
    
    [[params.socialIcons]]
-      name = "X"
-      url = "https://x.com/dpbmdev"
-    
-   [[params.socialIcons]]
       name = "Linkedin"
       url = "https://www.linkedin.com/in/alexandre-silva-a22383271/"
     
