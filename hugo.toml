@@ -6,6 +6,16 @@ theme = "PaperMod"
 
 copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
 
+[menu]
+    [[menu.main]]
+        identifier = "search"
+        name = ""
+        url = "/search/"
+        pre = '<i class="fa-solid fa-magnifying-glass"></i>'
+
+
+    
+
 
 [outputs]
   home = ['html', 'rss', 'json']
