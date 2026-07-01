@@ -13,10 +13,6 @@ copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
         url = "/search/"
         pre = '<i class="fa-solid fa-magnifying-glass"></i>'
 
-
-    
-
-
 [outputs]
   home = ['html', 'rss', 'json']
   section = ['html', 'rss']
@@ -45,9 +41,12 @@ copyright = '© 2026 Alexandre Silva <dpbm136@gmail.com>'
     [params.analytics.google]
         SiteVerificationTag = 'G-Q12P7E4HC9'
 
+   [params.assets]
+    favicon="/favicon.png"
+
    [params.homeInfoParams]
       Title = "Welcome to Dpbm's knowledge backup!"
-      Content = "This is my personal website. Here You will find many different things across many different fields (in general computer science). I love to share interesting things about things I'm working on! I Hope you enjoy reading it😉"
+      Content = "I'm Alexandre 👋, aka Dpbm and this is my vault. Here you may find a wide range of topics across computer science, eletronics and some science stuff. To talk more about me, I'm a graduated computer scientist pursuing my masters in the field. I'm passionate about quantum computing, low level programming and machine learning. Actually, I usually study about anything that's related with computers 😅 Well, whatever. I'm here to talk about my passions and projects 😍. Hope you enjoy! If you find something useful here, consider following me even supporting me on Ko-Fi💸. Let's go together 🤩🤩"
 
    [[params.socialIcons]]
       name = "Github"
