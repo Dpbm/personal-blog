@@ -1,0 +1,34 @@
+.support{
+    border-radius: var(--radius);
+    background: #DC9B9B;
+    color: #F6F4E8;
+    
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    flex-direction: column;
+    align-items:center;
+    gap: 10px;
+
+}
+
+.support li:first-child{
+    font-size: 30px;
+    font-weight: bold;
+    font-style: oblique;
+
+}
+
+.support li{
+    list-style:none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.support a{
+    font-style: italic;
+    text-decoration: underline;
+    color: #C0E1D2;
+}
